@@ -1,3 +1,9 @@
+import Xolani from '@/public/xolani.svg';
+import MrVenter from '@/public/Mr. Venter.svg';
+import JeanChurch from '@/public/Jean Church.svg';
+import MrPeters from '@/public/Mr Peters.svg';
+import NeoMarie from '@/public/neo marie.svg';
+
 export const navItems = [
     { name: "About", link: "#about" },
     { name: "Projects", link: "#projects" },
@@ -72,68 +78,73 @@ export const navItems = [
   export const projects = [
     {
       id: 1,
-      title: "3D Solar System Planets to Explore",
-      des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
+      title: "Airbnb-Clone-Jutsu",
+      des: "Full Stack Airbnb Clone with Next.js 13 App Router: React, Tailwind, Prisma, MongoDB, NextAuth.",
       img: "/p1.svg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-      link: "https://github.com/adrianhajdin?tab=repositories",
+      iconLists: ["/reactW.svg", "/tail.svg", "/prisma.svg", "/db1.svg", "/logo-sm.svg"],
+      link: "https://hotel-booking-site-jutsu.vercel.app",
     },
     {
       id: 2,
-      title: "Yoom - Video Conferencing App",
-      des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
+      title: "Aora - Video Sharing Mobile App",
+      des: "Built with React Native and Animatable for smooth experiences and animations, and powered by Appwrite = seamless sharing.",
       img: "/p2.svg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-      link: "https://github.com/adrianhajdin/zoom-clone",
+      iconLists: ["/re.svg", "/expo-go.svg", "/nw.svg", "/tail.svg", "/appw.svg"],
+      link: "https://github.com/Ngwenduhajdin/zoom-clone",
     },
     {
       id: 3,
-      title: "AI Image SaaS - Canva Application",
-      des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+      title: "E-Commerce + Dashboard & CMS",
+      des: "Built with Next.js 13 App Router, React, Tailwind, Prisma, MySQL - this application has a seamless navigation and user experience.",
       img: "/p3.svg",
-      iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-      link: "https://github.com/adrianhajdin/ai_saas_app",
+      iconLists: ["/next.svg", "/re.svg", "/tail.svg", "/prisma.svg", "/PS.svg"],
+      link: "https://github.com/Ngwenduhajdin/ai_saas_app",
     },
     {
       id: 4,
-      title: "Animated Apple Iphone 3D Website",
-      des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+      title: "Netflix-Clone-Jutsu",
+      des: "This project is a full-stack Netflix clone built with React, Tailwind CSS, Next.js, Prisma, MongoDB, and NextAuth.",
       img: "/p4.svg",
-      iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-      link: "https://github.com/adrianhajdin/iphone",
+      iconLists: ["/re.svg", "/tail.svg", "/next.svg", "/prisma.svg", "/db1.svg", "/logo-sm.svg"],
+      link: "https://flixjitsuclone.vercel.app/",
     },
   ];
   
   export const testimonials = [
     {
       quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
+        "CodeSpace provides you with one of the most in-demand skill sets worldwide. Our expertly designed learning pathways offer the most efficient route to becoming a developer. Wishing you the very best on your journey, Ngwendu!.",
+      profileImage: MrVenter,
+      name: "Schalk Venter",
+      title: "Lecturer",
     },
     {
       quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
+        "Working with Mr. Gambu allowed us to efficiently expand our team and secure the precise talent we needed. Mr. Ngwendu Gambu has provided exceptional support every step of the way.",
+      profileImage: MrPeters,
+      name: "Abdul Peters",
+      title: "Ceo & Founder",
     },
     {
       quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
+        "Collaborating with Ngwendu was an absolute pleasure. His professionalism, responsiveness, and commitment to delivering exceptional results were evident at every stage of our project. Ngwendu's passion for every aspect of development truly stands out. If you're looking to elevate your website and enhance your brand, Ngwendu is the perfect partner.",
+      profileImage: JeanChurch,
+      name: "Jean C",
+      title: "Director of JDP Technologies",
     },
     {
       quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
+        "My website now looks and feels amazing — a significant upgrade from where it was before working with Ngwendu. His expertise and attention to detail have truly elevated the entire user experience.",
+      profileImage: Xolani,
+      name: "Xolani Radebe",
+      title: "Store Owner",
     },
     {
       quote:
-        "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
-      name: "Michael Johnson",
-      title: "Director of AlphaStream Technologies",
+        "Ngwendu has been exceptionally accommodating, navigating the project's broad and sometimes ambiguous requirements with ease. His invaluable guidance has steered the project in the right direction. This level of commitment is truly remarkable and rare to find.",
+      profileImage: NeoMarie,
+      name: "Lehlohonolo Motsepe",
+      title: "Freelancer",
     },
   ];
   
@@ -205,13 +216,16 @@ export const navItems = [
     {
       id: 1,
       img: "/git.svg",
+      link: "https://github.com/ngwenduAction",
     },
     {
       id: 2,
       img: "/twit.svg",
+      link: "https://x.com/ngwendu_Action",
     },
     {
       id: 3,
       img: "/link.svg",
+      link: "http://linkedin.com/in/ngwenduaction",
     },
   ];

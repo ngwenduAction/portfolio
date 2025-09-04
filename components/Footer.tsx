@@ -1,28 +1,32 @@
-import React from "react";
-import MagicButton from "./ui/MagicButton";
-import { FaLocationArrow } from "react-icons/fa";
+import { FaLocationArrow } from "react-icons/fa6";
+import Image from "next/image";
 import { socialMedia } from "@/data";
+import MagicButton from "./ui/MagicButton";
+import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10" id="contact">
-      <div
-        className="w-full absolute left-0 -bottom-72
-        min-h-96"
-      >
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50"
-        />
+    <footer className="w-full pt-20 pb-10 relative" id="contact">
+      {/* background grid */}
+      <div className="w-full absolute left-0 -bottom-72 min-h-96">
+        <div className="relative w-full h-full">
+          <Image
+            src="/footer-grid.svg"
+            alt="grid"
+            fill
+            sizes="100vw"
+            className="object-cover opacity-50"
+            priority
+          />
+        </div>
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center relative z-10">
         <h1 className="heading lg:max-w-[45vw]">
           Ready to take <span className="text-purple">your</span> digital
           presence to the next level?
         </h1>
-        <p className="text-white-200 md:mt-10 my-45 text-center">
+        <p className="text-white-200 md:mt-10 my-5 text-center">
           Reach out to me today and let&apos;s discuss how I can help you
           achieve your goals.
         </p>
@@ -35,30 +39,23 @@ const Footer = () => {
         </a>
       </div>
 
-      <div
-        className="flex mt-16 md:flex-row flex-col 
-      justify-between items-center"
-      >
-        <p
-          className="md:text-base text-sm 
-        md:font-normal font-light"
-        >
-          Copyright © 2024 Ngwendu
+      <div className="flex mt-16 md:flex-row flex-col justify-between items-center relative z-10">
+        <p className="md:text-base text-sm md:font-normal font-light">
+          Copyright © 2025 Ngwendu.Action
         </p>
 
         <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((profile) => (
-            <div
-              key={profile.id}
-              className="w-10 h-10
-            cursor-pointer flex 
-            justify-center items-center backdrop-filter
-            backdrop-blur-lg saturate-180 bg-opacity-75
-            bg-black-200 rounded-lg border
-            border-black-300"
-            >
-              <img src={profile.img} alt={profile.id} width={20} height={20} />
-            </div>
+          {socialMedia.map((medium) => (
+            <Link href={medium.link} key={medium.id}>
+              <div className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300">
+                <Image
+                  src={medium.img}
+                  alt={medium.img ?? "icon"}
+                  width={20}
+                  height={20}
+                />
+              </div>
+            </Link>
           ))}
         </div>
       </div>
