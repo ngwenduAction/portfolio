@@ -1,22 +1,11 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
-import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
-import ThreeGlobe from "three-globe";
-import { useThree, Canvas, extend, ThreeElement } from "@react-three/fiber";
+import { useEffect, useRef } from "react";
+import { Canvas, extend, useThree } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import countries from "@/data/globe.json";
+import ThreeGlobe from "three-globe";
+import * as THREE from "three";
 
-declare module "@react-three/fiber" {
-  interface ThreeElements {
-    threeGlobe: ThreeElement<typeof ThreeGlobe>;
-  }
-}
-
-extend({ ThreeGlobe: ThreeGlobe as any });
-
-const RING_PROPAGATION_SPEED = 3;
-const aspect = 1.2;
-const cameraZ = 300;
+extend({ ThreeGlobe });
 
 type Position = {
   order: number;
@@ -29,29 +18,11 @@ type Position = {
 };
 
 export type GlobeConfig = {
-  pointSize?: number;
   globeColor?: string;
-  showAtmosphere?: boolean;
+  emissive?: string;
+  shininess?: number;
   atmosphereColor?: string;
   atmosphereAltitude?: number;
-  emissive?: string;
-  emissiveIntensity?: number;
-  shininess?: number;
-  polygonColor?: string;
-  ambientLight?: string;
-  directionalLeftLight?: string;
-  directionalTopLight?: string;
-  pointLight?: string;
-  arcTime?: number;
-  arcLength?: number;
-  rings?: number;
-  maxRings?: number;
-  initialPosition?: {
-    lat: number;
-    lng: number;
-  };
-  autoRotate?: boolean;
-  autoRotateSpeed?: number;
 };
 
 interface WorldProps {
@@ -59,109 +30,75 @@ interface WorldProps {
   data: Position[];
 }
 
-export function Globe({ globeConfig, data }: WorldProps) {
-  const [randomNumbers, setRandomNumbers] = useState<number[]>([]);
-  const [globeData, setGlobeData] = useState<
-    | {
-        size: number;
-        order: number;
-        color: (t: number) => string;
-        lat: number;
-        lng: number;
-      }[]
-    | null
-  >(null);
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      threeGlobe: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      > & { ref?: React.Ref<any>; args?: any[] };
+    }
+  }
+}
 
-  const globeRef = useRef<ThreeGlobe | null>(null);
-
-  const defaultProps = {
-    pointSize: 1,
-    atmosphereColor: "#ffffff",
-    showAtmosphere: true,
-    atmosphereAltitude: 0.1,
-    polygonColor: "rgba(255,255,255,0.7)",
-    globeColor: "#1d072e",
-    emissive: "#000000",
-    emissiveIntensity: 0.1,
-    shininess: 0.9,
-    arcTime: 2000,
-    arcLength: 0.9,
-    rings: 1,
-    maxRings: 3,
-    ...globeConfig,
-  };
+function Globe({ globeConfig, data }: WorldProps) {
+  const globeRef = useRef<any>();
+  const { scene } = useThree();
 
   useEffect(() => {
     if (globeRef.current) {
-      _buildData();
-      _buildMaterial();
+      // style globe
+      const mat = globeRef.current.globeMaterial();
+      mat.color = new THREE.Color(globeConfig.globeColor || "#1d072e");
+      mat.emissive = new THREE.Color(globeConfig.emissive || "#000000");
+      mat.shininess = globeConfig.shininess ?? 0.9;
+
+      // add atmosphere
+      globeRef.current
+        .showAtmosphere(true)
+        .atmosphereColor(globeConfig.atmosphereColor || "#ffffff")
+        .atmosphereAltitude(globeConfig.atmosphereAltitude ?? 0.1);
+
+      // assign data
+      globeRef.current
+        .pointsData(data.map((p) => ({ lat: p.startLat, lng: p.startLng })))
+        .arcsData(data);
     }
-  }, [globeRef.current, globeConfig, data]);
 
-  const _buildMaterial = () => {
-    if (!globeRef.current) return;
+    // add fog for depth
+    scene.fog = new THREE.Fog(0x000000, 400, 2000);
+  }, [data, globeConfig, scene]);
 
-    const globeMaterial = globeRef.current.globeMaterial() as unknown as {
-      color: Color;
-      emissive: Color;
-      emissiveIntensity: number;
-      shininess: number;
-    };
-    globeMaterial.color = new Color(globeConfig.globeColor);
-    globeMaterial.emissive = new Color(globeConfig.emissive);
-    globeMaterial.emissiveIntensity = globeConfig.emissiveIntensity || 0.1;
-    globeMaterial.shininess = globeConfig.shininess || 0.9;
-  };
-
-  const _buildData = () => {
-    const points = data.flatMap((arc) => {
-      const rgb = hexToRgb(arc.color);
-      return [
-        {
-          size: defaultProps.pointSize,
-          order: arc.order,
-          color: (t: number) => `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${1 - t})`,
-          lat: arc.startLat,
-          lng: arc.startLng,
-        },
-        {
-          size: defaultProps.pointSize,
-          order: arc.order,
-          color: (t: number) => `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${1 - t})`,
-          lat: arc.endLat,
-          lng: arc.endLng,
-        },
-      ];
-    });
-
-    setGlobeData(points);
-  };
-
-  return <threeGlobe ref={globeRef} />;
-}
-
-function hexToRgb(hex: string) {
-  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, (_, r, g, b) => r + r + g + g + b + b);
-
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  if (result) {
-    return {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16),
-    };
-  }
-
-  console.warn(`Invalid hex color: ${hex}`);
-  return { r: 255, g: 255, b: 255 }; // Default to white
+  return <threeGlobe ref={globeRef} args={[]} />;
 }
 
 export function World(props: WorldProps) {
+  const aspect =
+    typeof window !== "undefined" ? window.innerWidth / window.innerHeight : 1;
+
   return (
-    <Canvas>
+    <Canvas
+      camera={new THREE.PerspectiveCamera(50, aspect, 180, 1800)}
+      gl={{ antialias: true, alpha: true }}
+    >
+      {/* Lights */}
+      <ambientLight intensity={0.7} />
+      <directionalLight position={[100, 50, 200]} intensity={1} />
+
+      {/* Globe */}
       <Globe {...props} />
-      <OrbitControls autoRotate autoRotateSpeed={1} />
+
+      {/* Controls */}
+      <OrbitControls
+        enablePan={false}
+        enableZoom={false}
+        minDistance={300}
+        maxDistance={300}
+        autoRotate
+        autoRotateSpeed={1}
+        minPolarAngle={Math.PI / 3.5}
+        maxPolarAngle={Math.PI - Math.PI / 3}
+      />
     </Canvas>
   );
 }

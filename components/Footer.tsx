@@ -6,16 +6,17 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10 relative" id="contact">
+    <footer className="w-full pb-10 mb-[100px] md:mb-5" id="contact">
       {/* background grid */}
       <div className="w-full absolute left-0 -bottom-72 min-h-96">
         <div className="relative w-full h-full">
           <Image
             src="/footer-grid.svg"
             alt="grid"
-            fill
+            width={50}
+            height={50}
             sizes="100vw"
-            className="object-cover opacity-50"
+            className="w-full h-full opacity-50"
             priority
           />
         </div>

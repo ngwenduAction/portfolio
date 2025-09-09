@@ -1,8 +1,8 @@
-import Xolani from '@/public/xolani.svg';
-import MrVenter from '@/public/Mr. Venter.svg';
-import JeanChurch from '@/public/Jean Church.svg';
-import MrPeters from '@/public/Mr Peters.svg';
-import NeoMarie from '@/public/neo marie.svg';
+import Xolani from '../public/xolani.svg';
+import MrVenter from '../public/Mr. Venter.svg';
+import JeanChurch from '../public/Jean Church.svg';
+import MrPeters from '../public/Mr Peters.svg';
+import NeoMarie from '../public/neo marie.svg';
 
 export const navItems = [
     { name: "About", link: "#about" },
