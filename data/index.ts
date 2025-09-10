@@ -98,7 +98,7 @@ export const navItems = [
       des: "Built with Next.js 13 App Router, React, Tailwind, Prisma, MySQL - this application has a seamless navigation and user experience.",
       img: "/p3.svg",
       iconLists: ["/next.svg", "/re.svg", "/tail.svg", "/prisma.svg", "/PS.svg"],
-      link: "https://github.com/Ngwenduhajdin/ai_saas_app",
+      link: "https://ecommerce-store-maneno-u8re.vercel.app/",
     },
     {
       id: 4,
