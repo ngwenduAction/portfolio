@@ -1,8 +1,17 @@
 "use client";
+import dynamic from "next/dynamic";
 import React from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { CanvasRevealEffect } from "@/components/ui/CanvasRevealEffect";
+
+// Use .then to extract the named export:
+const CanvasRevealEffect = dynamic(
+  () =>
+    import("@/components/ui/CanvasRevealEffect").then(
+      (mod) => mod.CanvasRevealEffect
+    ),
+  { ssr: false }
+);
 
 const Approach = () => {
   return (
@@ -49,7 +58,7 @@ const Approach = () => {
         >
           <CanvasRevealEffect
             animationSpeed={3}
-            containerClassName="bg-sky-600"
+            containerClassName="bg-sky-600 rounded-3xl overflow-hidden"
             colors={[[125, 211, 252]]}
           />
         </Card>
@@ -129,10 +138,10 @@ const Card = ({
 
 const AceternityIcon = ({ order }: { order: string }) => {
   return (
-    <div>
+    <div className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]  group-hover/canvas-card:opacity-0 transition duration-200 min-w-40 mx-auto flex items-center justify-center">
       <button className="relative inline-flex overflow-hidden rounded-full p-[1px] font-bold text-2xl">
         <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-5 py-2 text-white backdrop-blur-3xl text-2xl font-bold">
+        <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-5 py-2 text-purple backdrop-blur-3xl text-2xl font-bold">
           {order}
         </span>
       </button>
