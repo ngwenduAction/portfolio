@@ -123,13 +123,13 @@ export const navItems = [
         "Working with Mr. Gambu allowed us to efficiently expand our team and secure the precise talent we needed. Mr. Ngwendu Gambu has provided exceptional support every step of the way.",
       profileImage: MrPeters,
       name: "Abdul Peters",
-      title: "Ceo & Founder",
+      title: "Founder",
     },
     {
       quote:
         "Collaborating with Ngwendu was an absolute pleasure. His professionalism, responsiveness, and commitment to delivering exceptional results were evident at every stage of our project. Ngwendu's passion for every aspect of development truly stands out. If you're looking to elevate your website and enhance your brand, Ngwendu is the perfect partner.",
       profileImage: JeanChurch,
-      name: "Jean C",
+      name: "James C",
       title: "Director of JDP Technologies",
     },
     {
