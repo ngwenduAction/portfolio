@@ -102,11 +102,11 @@ export const navItems = [
     },
     {
       id: 4,
-      title: "Netflix-Clone-Jutsu",
-      des: "This project is a full-stack Netflix clone built with React, Tailwind CSS, Next.js, Prisma, MongoDB, and NextAuth.",
-      img: "/p4.svg",
-      iconLists: ["/re.svg", "/tail.svg", "/next.svg", "/prisma.svg", "/db1.svg", "/logo-sm.svg"],
-      link: "https://flixjitsuclone.vercel.app/",
+      title: "Cocktail Website",
+      des: "A modern cocktail website built with React and TailwindCSS, featuring smooth GSAP animations such as SplitText reveals, scroll-triggered effects, parallax scrolling, and a custom carousel.",
+      img: "/p5_.svg",
+      iconLists: ["/re.svg", "/tail.svg", "/Vite.js.svg", "/gsap.svg"],
+      link: "https://gsap-drinks-liard.vercel.app/",
     },
   ];
   
