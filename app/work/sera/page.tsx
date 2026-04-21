@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import ProjectLinkList from "@/components/site/ProjectLinkList";
 import Reveal from "@/components/site/Reveal";
 import { getFeaturedWorkBySlug } from "@/content/featured-work";
 
@@ -263,22 +264,27 @@ export default function SeraPage() {
             </article>
           </Reveal>
 
-          <Reveal delay={0.12}>
-            <aside className="panel flex h-fit flex-col gap-6">
-              <div>
-                <p className="eyebrow">Links</p>
-                <ul className="space-y-3">
-                  {project.caseStudy.links.map((link) => (
-                    <li key={link.href}>
-                      <a className="text-link" href={link.href}>
-                        {link.label}
-                      </a>
-                    </li>
+            <Reveal delay={0.12}>
+              <aside className="panel flex h-fit flex-col gap-6">
+                <div>
+                  <p className="eyebrow">Links</p>
+                  <ProjectLinkList links={project.links} variant="detail" />
+                </div>
+
+                <div className="fine-rule pt-5">
+                  <p className="eyebrow">Support links</p>
+                  <ul className="space-y-3">
+                    {project.caseStudy.supportLinks.map((link) => (
+                      <li key={link.href}>
+                        <a className="text-link" href={link.href}>
+                          {link.label}
+                        </a>
+                      </li>
                   ))}
                 </ul>
-              </div>
+                </div>
 
-              <div className="fine-rule pt-5">
+                <div className="fine-rule pt-5">
                 <p className="eyebrow">SÉRA</p>
                 <p className="body-copy-soft">
                   A case study in editorial frontend systems, motion restraint,

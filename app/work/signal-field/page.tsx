@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import ProjectLinkList from "@/components/site/ProjectLinkList";
 import Reveal from "@/components/site/Reveal";
 import { getFeaturedWorkBySlug } from "@/content/featured-work";
 
@@ -285,17 +286,22 @@ export default function SignalFieldPage() {
 
       <section className="section-shell pb-20 sm:pb-24">
         <div className="page-shell grid gap-8 lg:grid-cols-[minmax(18rem,0.92fr)_minmax(0,1.08fr)]">
-          <Reveal>
-            <aside className="panel flex h-fit flex-col gap-6">
-              <div>
-                <p className="eyebrow">Links</p>
-                <ul className="space-y-3">
-                  {project.caseStudy.links.map((link) => (
-                    <li key={link.href}>
-                      <a className="text-link" href={link.href}>
-                        {link.label}
-                      </a>
-                    </li>
+            <Reveal>
+              <aside className="panel flex h-fit flex-col gap-6">
+                <div>
+                  <p className="eyebrow">Links</p>
+                  <ProjectLinkList links={project.links} variant="detail" />
+                </div>
+
+                <div className="fine-rule pt-5">
+                  <p className="eyebrow">Support links</p>
+                  <ul className="space-y-3">
+                    {project.caseStudy.supportLinks.map((link) => (
+                      <li key={link.href}>
+                        <a className="text-link" href={link.href}>
+                          {link.label}
+                        </a>
+                      </li>
                   ))}
                 </ul>
               </div>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Reveal from "@/components/site/Reveal";
 import { siteContent } from "@/content/site";
 
@@ -41,15 +43,18 @@ export default function HeroManifestoSection() {
                 </div>
 
                 <div className="mt-10 flex flex-wrap gap-5">
-                  <a className="text-link" href={siteContent.heroPrimaryAction.href}>
+                  <Link
+                    className="text-link"
+                    href={siteContent.heroPrimaryAction.href}
+                  >
                     {siteContent.heroPrimaryAction.label}
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     className="text-link muted-link"
                     href={siteContent.heroSecondaryAction.href}
                   >
                     {siteContent.heroSecondaryAction.label}
-                  </a>
+                  </Link>
                 </div>
               </header>
             </Reveal>

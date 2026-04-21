@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import ProjectLinkList from "@/components/site/ProjectLinkList";
 import Reveal from "@/components/site/Reveal";
 import { featuredWork } from "@/content/featured-work";
 
@@ -109,10 +108,8 @@ export default function SelectedWorkSection() {
                         ))}
                       </div>
 
-                      <div className="pt-2">
-                        <Link className="text-link" href={project.path}>
-                          Open project scaffold
-                        </Link>
+                      <div className="border-t border-white/10 pt-6">
+                        <ProjectLinkList links={project.links} />
                       </div>
                     </div>
                   </div>

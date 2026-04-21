@@ -57,11 +57,11 @@ export const siteContent: SiteContent = {
   ],
   heroPrimaryAction: {
     label: "View selected work",
-    href: "#work",
+    href: "/#work",
   },
   heroSecondaryAction: {
     label: "Read the roadmap",
-    href: "#roadmap",
+    href: "/#roadmap",
   },
   heroNotes: [
     "S\u00C9RA and Signal Field lead the current surface.",

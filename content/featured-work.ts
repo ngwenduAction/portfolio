@@ -5,6 +5,18 @@ export type WorkLink = {
   href: string;
 };
 
+export type WorkProjectLinks = {
+  caseStudy: {
+    href: string;
+  };
+  liveSite: {
+    href: string;
+  };
+  source?: {
+    href: string;
+  };
+};
+
 export type WorkDecision = {
   title: string;
   body: string;
@@ -29,7 +41,7 @@ export type WorkCaseStudy = {
   outcomeHeading: string;
   outcomeIntro: string;
   outcomePoints: string[];
-  links: WorkLink[];
+  supportLinks: WorkLink[];
   closingNote: string;
 };
 
@@ -49,6 +61,7 @@ export type FeaturedWork = {
   rendering: string;
   status: string;
   detailIntro: string;
+  links: WorkProjectLinks;
   caseStudy: WorkCaseStudy;
 };
 
@@ -78,6 +91,14 @@ export const featuredWork: FeaturedWork[] = [
     status: "Detailed case study in progress",
     detailIntro:
       "This scaffold keeps the route, language, and information shape in place while the fuller project documentation is still being written.",
+    links: {
+      caseStudy: {
+        href: "/work/sera",
+      },
+      liveSite: {
+        href: "https://sera-skincare-microsite.vercel.app",
+      },
+    },
     caseStudy: {
       introLabel: "Editorial systems",
       introSummary:
@@ -134,7 +155,7 @@ export const featuredWork: FeaturedWork[] = [
         "It shows how restrained motion can strengthen hierarchy instead of competing with it.",
         "It establishes a benchmark for responsive media handling and authored frontend finish inside the portfolio.",
       ],
-      links: [
+      supportLinks: [
         { label: "Back to selected work", href: "/#work" },
         { label: "Open contact", href: "/#contact" },
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
@@ -168,6 +189,14 @@ export const featuredWork: FeaturedWork[] = [
     status: "Detailed case study in progress",
     detailIntro:
       "The current page is intentionally honest: it establishes the project language now and leaves room for deeper technical documentation later.",
+    links: {
+      caseStudy: {
+        href: "/work/signal-field",
+      },
+      liveSite: {
+        href: "https://signal-field.vercel.app",
+      },
+    },
     caseStudy: {
       introLabel: "Real-time direction",
       introSummary:
@@ -224,7 +253,7 @@ export const featuredWork: FeaturedWork[] = [
         "It strengthens the bridge between interface composition and GPU-aware animation thinking.",
         "It sets a direction for future work where rendering decisions are treated as core system choices rather than optional embellishment.",
       ],
-      links: [
+      supportLinks: [
         { label: "Back to selected work", href: "/#work" },
         { label: "Open contact", href: "/#contact" },
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
