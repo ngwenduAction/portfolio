@@ -1,4 +1,4 @@
-export type FeaturedWorkSlug = "sera" | "signal-field";
+export type FeaturedWorkSlug = "sera" | "signal-field" | "mobikes";
 
 export type WorkLink = {
   label: string;
@@ -47,6 +47,7 @@ export type WorkCaseStudy = {
 
 export type FeaturedWork = {
   slug: FeaturedWorkSlug;
+  homepageGroup: "anchor" | "client";
   index: string;
   title: string;
   path: string;
@@ -68,6 +69,7 @@ export type FeaturedWork = {
 export const featuredWork: FeaturedWork[] = [
   {
     slug: "sera",
+    homepageGroup: "anchor",
     index: "01",
     title: "S\u00C9RA",
     path: "/work/sera",
@@ -166,6 +168,7 @@ export const featuredWork: FeaturedWork[] = [
   },
   {
     slug: "signal-field",
+    homepageGroup: "anchor",
     index: "02",
     title: "Signal Field",
     path: "/work/signal-field",
@@ -262,8 +265,125 @@ export const featuredWork: FeaturedWork[] = [
         "Signal Field marks the point where Negative Space stops being only about interface composition and starts speaking more clearly in rendering systems, procedural motion, and real-time surface logic.",
     },
   },
+  {
+    slug: "mobikes",
+    homepageGroup: "client",
+    index: "03",
+    title: "mobikes",
+    path: "/work/mobikes",
+    label: "Client-facing delivery",
+    year: "Rent-to-own mobility website",
+    thesis:
+      "Business clarity, trust, and application flow brought into one responsive surface.",
+    summary:
+      "mobikes broadens the portfolio with practical client delivery: a South African rent-to-own mobility website shaped around trust, offer clarity, and a faster path to application.",
+    role: "Website design and front-end development",
+    focus: [
+      "conversion-focused information clarity",
+      "responsive business-facing UI",
+      "iteration through client feedback",
+    ],
+    systems:
+      "The project is about simplifying a real offer into a clearer information architecture: presenting Hero motorcycles first, reducing explanatory drag, and keeping supporting products visible without weakening the main conversion path.",
+    motion:
+      "Motion remains minimal and business-readable. The emphasis is on hierarchy, button clarity, and transitions that support scanning rather than competing with the primary offer.",
+    rendering:
+      "mobikes is a practical HTML, CSS, and JavaScript build prepared for hosting, WhatsApp contact, and a live Google Form application flow.",
+    status: "Live client preview",
+    detailIntro:
+      "mobikes shows Negative Space in a client-facing mode: translating a real business model into a shorter, clearer, and more trustworthy responsive surface without losing polish.",
+    links: {
+      caseStudy: {
+        href: "/work/mobikes",
+      },
+      liveSite: {
+        href: "https://mobikes-preview.netlify.app/",
+      },
+    },
+    caseStudy: {
+      introLabel: "Client-facing execution",
+      introSummary:
+        "mobikes is framed as a conversion-focused website for a South African mobility business: a project about clarifying the rent-to-own offer, strengthening trust, and guiding users toward application with less friction.",
+      heroSignals: [
+        {
+          label: "Primary offer",
+          value: "Hero Eco 150 / rent-to-own / ZAR 800 per week",
+        },
+        {
+          label: "Support included",
+          value: "Service / insurance / tracking",
+        },
+        {
+          label: "Client context",
+          value: "mobikes / Protea Glen, Soweto, South Africa",
+        },
+      ],
+      roleNotes: [
+        "Structuring the content around the business model so the homepage explains the main offer quickly and credibly.",
+        "Translating client feedback into a shorter and cleaner page flow without losing essential supporting information.",
+        "Refining the visual direction, CTA hierarchy, and responsive layout so the site feels trustworthy on both desktop and mobile.",
+      ],
+      systemsHeading: "Key systems and conversion decisions",
+      systemsIntro:
+        "The value in mobikes comes from practical clarity. The site had to communicate financing, product priority, supporting services, and contact actions without turning into a long explanatory page that diluted intent.",
+      systemsDecisions: [
+        {
+          title: "Offer-first homepage structure",
+          body: "The site is organized around the Hero Eco 150 rent-to-own offer first, so users meet the core proposition immediately. Supporting services stay visible, but they are arranged to reinforce the main decision rather than compete with it.",
+        },
+        {
+          title: "Trust-building visual hierarchy",
+          body: "A cleaner white, black, and blue palette helps the brand feel more established, while card layering, button treatment, and structured spacing make the interface read as professional and reliable.",
+        },
+        {
+          title: "Feedback-driven simplification",
+          body: "Sections were reduced, long intros were cut back, duplicate emphasis blocks were removed, and navigation was simplified. The final structure works because it respects attention instead of over-explaining the service.",
+        },
+      ],
+      implementationHeading: "Implementation notes",
+      implementationIntro:
+        "Implementation quality here is measured by directness and readiness: responsive layout behavior, clear CTA wiring, careful asset handling, and a build that can move cleanly from preview to the final production domain.",
+      implementationNotes: [
+        {
+          title: "Responsive business-facing layout",
+          body: "The interface is tuned to stay legible and conversion-friendly on mobile, where many users are likely to encounter the site first. Layout compression, button placement, and offer framing all had to remain stable at smaller sizes.",
+        },
+        {
+          title: "CTA and contact integration",
+          body: "Application actions were connected directly to the client's Google Form, while WhatsApp contact access remained easy to find. The goal was a simpler route from interest to action, not a decorative interaction layer.",
+        },
+        {
+          title: "Brand adaptation and asset handling",
+          body: "The visual system was adjusted around the client's blue, black, and white preferences, with careful handling of the real logo and white-background assets so the site still felt premium and cohesive.",
+        },
+      ],
+      outcomeHeading: "Outcome / reflection",
+      outcomeIntro:
+        "mobikes demonstrates how Negative Space operates when the work is accountable to a real business outcome: stronger trust, a clearer offer, and a more direct path to application.",
+      outcomePoints: [
+        "The project proves client-facing delivery with practical frontend execution instead of purely conceptual framing.",
+        "It shows an ability to simplify information architecture around business goals and evolving feedback.",
+        "It adds a stronger example of responsive, trust-building UI for a real service-led website.",
+      ],
+      supportLinks: [
+        { label: "Back to selected work", href: "/#work" },
+        { label: "Open contact", href: "/#contact" },
+        { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
+      ],
+      closingNote:
+        "mobikes broadens the portfolio by proving that polished frontend thinking can stay practical: clear structure, direct conversion paths, responsive discipline, and iteration in service of a real client outcome.",
+    },
+  },
 ];
 
 export function getFeaturedWorkBySlug(slug: FeaturedWorkSlug) {
   return featuredWork.find((item) => item.slug === slug);
 }
+
+export const anchorWork = featuredWork.filter(
+  (item) => item.homepageGroup === "anchor",
+);
+
+export const clientWork = featuredWork.filter(
+  (item) => item.homepageGroup === "client",
+);
