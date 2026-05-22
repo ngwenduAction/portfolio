@@ -1,4 +1,4 @@
-export type FeaturedWorkSlug = "sera" | "signal-field" | "mobikes" | "koi";
+export type FeaturedWorkSlug = "sera" | "signal-field" | "moBikes" | "koi";
 
 export type WorkLink = {
   label: string;
@@ -266,17 +266,17 @@ export const featuredWork: FeaturedWork[] = [
     },
   },
   {
-    slug: "mobikes",
+    slug: "moBikes",
     homepageGroup: "supporting",
     index: "03",
-    title: "mobikes",
-    path: "/work/mobikes",
+    title: "moBikes",
+    path: "/work/moBikes",
     label: "Client-facing delivery",
     year: "Rent-to-own mobility website",
     thesis:
       "Business clarity, trust, and application flow brought into one responsive surface.",
     summary:
-      "mobikes broadens the portfolio with practical client delivery: a South African rent-to-own mobility website shaped around trust, offer clarity, and a faster path to application.",
+      "moBikes broadens the portfolio with practical client delivery: a South African rent-to-own mobility website shaped around trust, offer clarity, and a faster path to application.",
     role: "Website design and front-end development",
     focus: [
       "conversion-focused information clarity",
@@ -288,22 +288,22 @@ export const featuredWork: FeaturedWork[] = [
     motion:
       "Motion remains minimal and business-readable. The emphasis is on hierarchy, button clarity, and transitions that support scanning rather than competing with the primary offer.",
     rendering:
-      "mobikes is a practical HTML, CSS, and JavaScript build prepared for hosting, WhatsApp contact, and a live Google Form application flow.",
+      "moBikes is a practical HTML, CSS, and JavaScript build prepared for hosting, WhatsApp contact, and a live Google Form application flow.",
     status: "Live client preview",
     detailIntro:
-      "mobikes shows Negative Space in a client-facing mode: translating a real business model into a shorter, clearer, and more trustworthy responsive surface without losing polish.",
+      "moBikes shows Negative Space in a client-facing mode: translating a real business model into a shorter, clearer, and more trustworthy responsive surface without losing polish.",
     links: {
       caseStudy: {
-        href: "/work/mobikes",
+        href: "/work/moBikes",
       },
       liveSite: {
-        href: "https://mobikes-preview.netlify.app/",
+        href: "https://moBikes-preview.netlify.app/",
       },
     },
     caseStudy: {
       introLabel: "Client-facing execution",
       introSummary:
-        "mobikes is framed as a conversion-focused website for a South African mobility business: a project about clarifying the rent-to-own offer, strengthening trust, and guiding users toward application with less friction.",
+        "moBikes is framed as a conversion-focused website for a South African mobility business: a project about clarifying the rent-to-own offer, strengthening trust, and guiding users toward application with less friction.",
       heroSignals: [
         {
           label: "Primary offer",
@@ -315,7 +315,7 @@ export const featuredWork: FeaturedWork[] = [
         },
         {
           label: "Client context",
-          value: "mobikes / Protea Glen, Soweto, South Africa",
+          value: "moBikes / Protea Glen, Soweto, South Africa",
         },
       ],
       roleNotes: [
@@ -325,7 +325,7 @@ export const featuredWork: FeaturedWork[] = [
       ],
       systemsHeading: "Key systems and conversion decisions",
       systemsIntro:
-        "The value in mobikes comes from practical clarity. The site had to communicate financing, product priority, supporting services, and contact actions without turning into a long explanatory page that diluted intent.",
+        "The value in moBikes comes from practical clarity. The site had to communicate financing, product priority, supporting services, and contact actions without turning into a long explanatory page that diluted intent.",
       systemsDecisions: [
         {
           title: "Offer-first homepage structure",
@@ -359,7 +359,7 @@ export const featuredWork: FeaturedWork[] = [
       ],
       outcomeHeading: "Outcome / reflection",
       outcomeIntro:
-        "mobikes demonstrates how Negative Space operates when the work is accountable to a real business outcome: stronger trust, a clearer offer, and a more direct path to application.",
+        "moBikes demonstrates how Negative Space operates when the work is accountable to a real business outcome: stronger trust, a clearer offer, and a more direct path to application.",
       outcomePoints: [
         "The project proves client-facing delivery with practical frontend execution instead of purely conceptual framing.",
         "It shows an ability to simplify information architecture around business goals and evolving feedback.",
@@ -371,7 +371,7 @@ export const featuredWork: FeaturedWork[] = [
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
       ],
       closingNote:
-        "mobikes broadens the portfolio by proving that polished frontend thinking can stay practical: clear structure, direct conversion paths, responsive discipline, and iteration in service of a real client outcome.",
+        "moBikes broadens the portfolio by proving that polished frontend thinking can stay practical: clear structure, direct conversion paths, responsive discipline, and iteration in service of a real client outcome.",
     },
   },
   {

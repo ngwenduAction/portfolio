@@ -7,7 +7,7 @@ import Reveal from "@/components/site/Reveal";
 import { getFeaturedWorkBySlug } from "@/content/featured-work";
 
 export function generateMetadata(): Metadata {
-  const project = getFeaturedWorkBySlug("mobikes");
+  const project = getFeaturedWorkBySlug("moBikes");
 
   if (!project) {
     return {};
@@ -44,8 +44,8 @@ export function generateMetadata(): Metadata {
   };
 }
 
-export default function MobikesPage() {
-  const project = getFeaturedWorkBySlug("mobikes");
+export default function moBikesPage() {
+  const project = getFeaturedWorkBySlug("moBikes");
 
   if (!project) {
     notFound();
@@ -198,7 +198,9 @@ export default function MobikesPage() {
             <header className="section-header grid gap-6 lg:grid-cols-[minmax(0,0.96fr)_minmax(20rem,1.04fr)]">
               <div>
                 <p className="eyebrow">Key systems / decisions</p>
-                <h2 className="section-title">{project.caseStudy.systemsHeading}</h2>
+                <h2 className="section-title">
+                  {project.caseStudy.systemsHeading}
+                </h2>
               </div>
               <p className="body-copy max-w-2xl lg:justify-self-end">
                 {project.caseStudy.systemsIntro}
@@ -258,7 +260,8 @@ export default function MobikesPage() {
                     Cellphones, accessories, servicing, repairs, maintenance,
                     and fingerprint or background checks all remain part of the
                     business context. The site had to acknowledge that wider
-                    service surface without losing focus on the motorcycle offer.
+                    service surface without losing focus on the motorcycle
+                    offer.
                   </p>
                 </div>
 
@@ -282,7 +285,7 @@ export default function MobikesPage() {
               <div>
                 <p className="eyebrow">{project.caseStudy.outcomeHeading}</p>
                 <h2 className="section-title text-[2.35rem] sm:text-[3rem]">
-                  What mobikes adds to the portfolio.
+                  What moBikes adds to the portfolio.
                 </h2>
               </div>
               <p className="body-copy">{project.caseStudy.outcomeIntro}</p>
@@ -318,7 +321,9 @@ export default function MobikesPage() {
 
               <div className="fine-rule pt-5">
                 <p className="eyebrow">Closing note</p>
-                <p className="body-copy-soft">{project.caseStudy.closingNote}</p>
+                <p className="body-copy-soft">
+                  {project.caseStudy.closingNote}
+                </p>
               </div>
             </aside>
           </Reveal>

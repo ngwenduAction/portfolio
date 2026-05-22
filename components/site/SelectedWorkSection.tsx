@@ -18,9 +18,9 @@ export default function SelectedWorkSection() {
             <p className="body-copy max-w-2xl lg:justify-self-end">
               The work section is organized around an authored pair first, then
               widened by applied delivery and systems architecture.{" "}
-              {"S\u00C9RA"} and Signal Field establish the conceptual frame;
-              KOI and mobikes show how the same discipline extends into
-              full-stack engineering and business-facing execution.
+              {"S\u00C9RA"} and Signal Field establish the conceptual frame; KOI
+              and moBikes show how the same discipline extends into full-stack
+              engineering and business-facing execution.
             </p>
           </header>
         </Reveal>
@@ -127,7 +127,7 @@ export default function SelectedWorkSection() {
                 <div>
                   <p className="eyebrow">Applied delivery and systems</p>
                   <h3 className="font-display text-3xl leading-tight text-white sm:text-[2.75rem]">
-                    KOI anchors the engineering depth, while mobikes proves the
+                    KOI anchors the engineering depth, while moBikes proves the
                     same frontend discipline in a real business-facing context.
                   </h3>
                 </div>
