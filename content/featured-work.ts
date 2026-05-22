@@ -1,4 +1,4 @@
-export type FeaturedWorkSlug = "sera" | "signal-field" | "mobikes";
+export type FeaturedWorkSlug = "sera" | "signal-field" | "mobikes" | "koi";
 
 export type WorkLink = {
   label: string;
@@ -47,7 +47,7 @@ export type WorkCaseStudy = {
 
 export type FeaturedWork = {
   slug: FeaturedWorkSlug;
-  homepageGroup: "anchor" | "client";
+  homepageGroup: "anchor" | "supporting";
   index: string;
   title: string;
   path: string;
@@ -267,7 +267,7 @@ export const featuredWork: FeaturedWork[] = [
   },
   {
     slug: "mobikes",
-    homepageGroup: "client",
+    homepageGroup: "supporting",
     index: "03",
     title: "mobikes",
     path: "/work/mobikes",
@@ -374,6 +374,115 @@ export const featuredWork: FeaturedWork[] = [
         "mobikes broadens the portfolio by proving that polished frontend thinking can stay practical: clear structure, direct conversion paths, responsive discipline, and iteration in service of a real client outcome.",
     },
   },
+  {
+    slug: "koi",
+    homepageGroup: "supporting",
+    index: "04",
+    title: "KOI",
+    path: "/work/koi",
+    label: "Full-stack architectural anchor",
+    year: "Editorial-grade full-stack platform",
+    thesis:
+      "Premium visual execution backed by rigorous schema design, server logic, and production infrastructure.",
+    summary:
+      "KOI strengthens the portfolio as a technical anchor: a premium full-stack platform engineered with Next.js, Prisma, PostgreSQL, AWS RDS, and Vercel to prove data-driven delivery at enterprise depth.",
+    role: "Full-Stack Software Engineering & Architecture",
+    focus: [
+      "relational database and schema design",
+      "server-side architecture and deployment pipelines",
+      "editorial-grade frontend precision under system constraints",
+    ],
+    systems:
+      "KOI is about marrying commanding frontend structure with backend rigor: relational mapping, server-rendered routing, environment discipline, and a UI system precise enough to carry a premium editorial identity without drifting from the underlying architecture.",
+    motion:
+      "Motion stays subordinate to authority and structure. The emphasis is on exact layout behavior, premium transitions, and a frontend that feels composed because the underlying system is stable.",
+    rendering:
+      "The platform is built in Next.js with Tailwind CSS, Prisma ORM, PostgreSQL on AWS RDS, and Vercel-based deployment and environment management.",
+    status: "Live production platform",
+    detailIntro:
+      "KOI shows the practice at its most infrastructural: a full-stack platform where database architecture, deployment pipelines, and exacting frontend geometry all have to hold together as one system.",
+    links: {
+      caseStudy: {
+        href: "/work/koi",
+      },
+      liveSite: {
+        href: "https://koi-church.vercel.app",
+      },
+    },
+    caseStudy: {
+      introLabel: "Full-stack architecture",
+      introSummary:
+        "KOI is framed as a technical anchor for the portfolio: a project where premium editorial presentation depends on disciplined full-stack engineering, relational data modeling, and production infrastructure that can support a high-spec frontend.",
+      heroSignals: [
+        {
+          label: "Core stack",
+          value: "Next.js / Prisma / PostgreSQL / Tailwind",
+        },
+        {
+          label: "Infrastructure",
+          value: "AWS RDS / Vercel / environment management",
+        },
+        {
+          label: "Primary lens",
+          value: "Full-stack architecture with premium UI precision",
+        },
+      ],
+      roleNotes: [
+        "Designing the relational schema and application structure so the platform could carry real data with stability instead of behaving like a purely presentational frontend.",
+        "Engineering the UI around strict brand geometry, responsive overrides, and typographic control so the visual system felt bespoke rather than template-led.",
+        "Managing the path from local development through production deployment, including database environment strategy and infrastructure mapping.",
+      ],
+      systemsHeading: "Key systems and architectural decisions",
+      systemsIntro:
+        "KOI matters because the frontend ambition is inseparable from the backend architecture. The project had to prove that a premium surface can still rest on a serious application foundation: schema design, deployment discipline, routing structure, and data-aware engineering decisions.",
+      systemsDecisions: [
+        {
+          title: "Relational schema as product foundation",
+          body: "Prisma and PostgreSQL were used to establish a data model that could scale beyond static presentation. The platform is strongest when the schema is treated as part of the product architecture, not as an afterthought attached to a finished UI.",
+        },
+        {
+          title: "Next.js as structural runtime",
+          body: "The application leans on Next.js for routing, server-side rendering, and a cleaner separation between page composition and backend-aware logic. That architectural choice helps the platform stay fast, organized, and production-ready.",
+        },
+        {
+          title: "Hardcoded geometry for brand authority",
+          body: "Standard layout behavior was intentionally overridden where necessary to enforce exact brand dominance, asset fit, and editorial proportions. The goal was not flexibility for its own sake, but a stricter visual system that served the identity precisely.",
+        },
+      ],
+      implementationHeading: "Implementation notes",
+      implementationIntro:
+        "KOI proves engineering maturity in the connective tissue: migrations, environment handling, deployment discipline, asset-level layout fixes, and the constant balancing act between polished presentation and robust application infrastructure.",
+      implementationNotes: [
+        {
+          title: "Database pipeline management",
+          body: "The project moved from local development patterns into a production PostgreSQL setup on AWS RDS. That required thinking carefully about schema consistency, migration flow, and how the application should behave across environments.",
+        },
+        {
+          title: "Server logic and deployment discipline",
+          body: "Environment variables, Vercel deployment, Git integration, and backend-aware application structure were all part of the delivery. The platform had to behave like a real software product, not only a premium interface layer.",
+        },
+        {
+          title: "Precision frontend engineering",
+          body: "Layout constraints, responsive scaling overrides, and transparent asset corrections were handled directly in code to make the editorial direction hold across breakpoints. The visual quality depends on engineering exactness, not only aesthetic intent.",
+        },
+      ],
+      outcomeHeading: "Outcome / reflection",
+      outcomeIntro:
+        "KOI establishes the portfolio’s strongest proof of full-stack software engineering: production-ready data architecture, deployment infrastructure, and a premium interface held to exacting standards.",
+      outcomePoints: [
+        "The project proves deeper systemic knowledge across schema design, server logic, deployment, and full-stack delivery.",
+        "It shows that premium frontend execution can coexist with heavy backend requirements instead of being separated from them.",
+        "It provides a technical foundation that strengthens the transition toward more advanced creative engineering and WebGL-focused work.",
+      ],
+      supportLinks: [
+        { label: "Back to selected work", href: "/#work" },
+        { label: "Open contact", href: "/#contact" },
+        { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
+      ],
+      closingNote:
+        "KOI is the clearest proof that Negative Space is not only a visual practice. It is also a full-stack engineering practice capable of building robust data systems, production infrastructure, and premium interfaces at the same time.",
+    },
+  },
 ];
 
 export function getFeaturedWorkBySlug(slug: FeaturedWorkSlug) {
@@ -384,6 +493,6 @@ export const anchorWork = featuredWork.filter(
   (item) => item.homepageGroup === "anchor",
 );
 
-export const clientWork = featuredWork.filter(
-  (item) => item.homepageGroup === "client",
+export const supportingWork = featuredWork.filter(
+  (item) => item.homepageGroup === "supporting",
 );

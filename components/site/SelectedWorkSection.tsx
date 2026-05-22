@@ -1,6 +1,6 @@
 import ProjectLinkList from "@/components/site/ProjectLinkList";
 import Reveal from "@/components/site/Reveal";
-import { anchorWork, clientWork } from "@/content/featured-work";
+import { anchorWork, supportingWork } from "@/content/featured-work";
 
 export default function SelectedWorkSection() {
   return (
@@ -17,9 +17,10 @@ export default function SelectedWorkSection() {
             </div>
             <p className="body-copy max-w-2xl lg:justify-self-end">
               The work section is organized around an authored pair first, then
-              widened by real client delivery. SÉRA and Signal Field establish
-              the conceptual frame; mobikes proves that the same frontend
-              discipline can operate clearly inside a business-facing website.
+              widened by applied delivery and systems architecture.{" "}
+              {"S\u00C9RA"} and Signal Field establish the conceptual frame;
+              KOI and mobikes show how the same discipline extends into
+              full-stack engineering and business-facing execution.
             </p>
           </header>
         </Reveal>
@@ -119,26 +120,27 @@ export default function SelectedWorkSection() {
           })}
         </div>
 
-        {clientWork.length > 0 ? (
+        {supportingWork.length > 0 ? (
           <div className="mt-12 space-y-6 border-t border-white/10 pt-10 sm:mt-14 sm:pt-12">
             <Reveal>
               <header className="grid gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(20rem,1.1fr)] lg:items-end">
                 <div>
-                  <p className="eyebrow">Client-facing delivery</p>
+                  <p className="eyebrow">Applied delivery and systems</p>
                   <h3 className="font-display text-3xl leading-tight text-white sm:text-[2.75rem]">
-                    mobikes extends the body of work through practical
-                    conversion-focused frontend execution.
+                    KOI anchors the engineering depth, while mobikes proves the
+                    same frontend discipline in a real business-facing context.
                   </h3>
                 </div>
                 <p className="body-copy max-w-2xl lg:justify-self-end">
-                  This project shows the practice in a business-facing context:
-                  clarifying an offer, iterating through client feedback, and
-                  building a more trustworthy path to application.
+                  This layer broadens the portfolio without diluting its
+                  authored core. It covers production-grade architecture,
+                  database-backed delivery, trust-building UI, and the ability
+                  to adapt complex systems to real operating needs.
                 </p>
               </header>
             </Reveal>
 
-            {clientWork.map((project, index) => (
+            {supportingWork.map((project, index) => (
               <Reveal key={project.slug} delay={index * 0.08}>
                 <article className="panel grid gap-8 lg:grid-cols-[minmax(18rem,0.7fr)_minmax(0,1.3fr)] lg:items-start">
                   <div className="space-y-6">
