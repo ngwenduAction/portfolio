@@ -14,7 +14,7 @@ export default function ContactSection() {
             </h2>
             <p className="body-copy mt-6 max-w-2xl">{contactContent.note}</p>
             <a
-              className="font-display mt-10 inline-flex text-4xl leading-none text-white transition duration-300 hover:text-[color:var(--accent)] sm:text-5xl"
+              className="contact-email font-display mt-10 inline-flex text-4xl leading-none text-white transition duration-300 hover:text-[color:var(--accent)] sm:text-5xl"
               href={`mailto:${contactContent.email}`}
             >
               {contactContent.email}

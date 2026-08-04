@@ -16,10 +16,12 @@
     --signal: #95a8b6;
     --radius: 1.7rem;
     --section-space: clamp(4.5rem, 8vw, 8rem);
+    --sticky-header-offset: 6rem;
   }
 
   html {
     background: var(--background);
+    scroll-padding-top: var(--sticky-header-offset);
   }
 
   * {
@@ -90,7 +92,7 @@
     padding-top: var(--section-space);
     padding-bottom: var(--section-space);
     border-top: 1px solid var(--line);
-    scroll-margin-top: 6rem;
+    scroll-margin-top: var(--sticky-header-offset);
   }
 
   .section-header {
@@ -212,6 +214,17 @@
 
   .skip-link:focus-visible {
     transform: translateY(0);
+  }
+
+  .contact-email {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --sticky-header-offset: 11rem;
   }
 }
 

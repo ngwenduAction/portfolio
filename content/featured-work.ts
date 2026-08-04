@@ -270,7 +270,7 @@ export const featuredWork: FeaturedWork[] = [
     homepageGroup: "supporting",
     index: "03",
     title: "moBikes",
-    path: "/work/moBikes",
+    path: "/work/mobikes",
     label: "Client-facing delivery",
     year: "Rent-to-own mobility website",
     thesis:
@@ -294,10 +294,10 @@ export const featuredWork: FeaturedWork[] = [
       "moBikes shows Negative Space in a client-facing mode: translating a real business model into a shorter, clearer, and more trustworthy responsive surface without losing polish.",
     links: {
       caseStudy: {
-        href: "/work/moBikes",
+        href: "/work/mobikes",
       },
       liveSite: {
-        href: "https://moBikes-preview.netlify.app/",
+        href: "https://www.mobikes.co.za/",
       },
     },
     caseStudy: {
@@ -406,7 +406,7 @@ export const featuredWork: FeaturedWork[] = [
         href: "/work/koi",
       },
       liveSite: {
-        href: "https://koi-church.vercel.app",
+        href: "https://koi-biblestudy.vercel.app/",
       },
     },
     caseStudy: {
