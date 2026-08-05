@@ -18,8 +18,13 @@ export type SiteContent = {
   };
   heroCommercialPrompt: string;
   heroCommercialAction: string;
-  footerNote: string;
 };
+
+export const productionSiteUrl = "https://portfolio-ngwendu.vercel.app";
+
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || productionSiteUrl
+).replace(/\/$/, "");
 
 export const siteContent: SiteContent = {
   name: "Ngwendu Gambu",
@@ -48,6 +53,4 @@ export const siteContent: SiteContent = {
   },
   heroCommercialPrompt: "Looking for a studio partner?",
   heroCommercialAction: "Maneno handles project enquiries.",
-  footerNote:
-    "Negative Space is being built as a long-lived surface for selected work, active studies, and future real-time direction.",
 };

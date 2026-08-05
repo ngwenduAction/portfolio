@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import ProjectLinkList from "@/components/site/ProjectLinkList";
 import Reveal from "@/components/site/Reveal";
 import { getFeaturedWorkBySlug } from "@/content/featured-work";
+import { createProjectMetadata } from "@/lib/project-metadata";
 
 export function generateMetadata(): Metadata {
   const project = getFeaturedWorkBySlug("signal-field");
@@ -13,35 +14,7 @@ export function generateMetadata(): Metadata {
     return {};
   }
 
-  const description = `${project.summary} ${project.caseStudy.introSummary}`;
-
-  return {
-    title: project.title,
-    description,
-    alternates: {
-      canonical: project.path,
-    },
-    openGraph: {
-      title: project.title,
-      description,
-      type: "article",
-      url: project.path,
-      images: [
-        {
-          url: "/og-signal-field.png",
-          width: 1486,
-          height: 704,
-          alt: "Signal Field project preview",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: project.title,
-      description,
-      images: ["/og-signal-field.png"],
-    },
-  };
+  return createProjectMetadata(project);
 }
 
 export default function SignalFieldPage() {
@@ -64,7 +37,7 @@ export default function SignalFieldPage() {
                 className="quiet-link text-sm uppercase tracking-[0.22em] text-white/52"
                 href="/"
               >
-                Negative Space
+                Ngwendu Gambu
               </Link>
             </div>
           </Reveal>
@@ -272,7 +245,7 @@ export default function SignalFieldPage() {
                   <div className="fine-rule pt-5">
                     <p className="eyebrow">Signal Field</p>
                     <p className="body-copy-soft">
-                      A case study about where Negative Space becomes more
+                      A case study about where the practice becomes more
                       procedural, more rendering-aware, and more explicit about
                       the systems behind visual motion.
                     </p>

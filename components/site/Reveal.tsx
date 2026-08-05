@@ -1,7 +1,12 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { LazyMotion, m, useReducedMotion } from "framer-motion";
 import { useSyncExternalStore } from "react";
+
+const loadMotionFeatures = () =>
+  import("@/components/site/motion-features").then(
+    (module) => module.default,
+  );
 
 const subscribeToBrowserCapability = () => () => {};
 const getBrowserCapability = () =>
@@ -33,18 +38,20 @@ export default function Reveal({
   }
 
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: distance }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{
-        duration: 0.65,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      {children}
-    </motion.div>
+    <LazyMotion features={loadMotionFeatures} strict>
+      <m.div
+        className={className}
+        initial={{ opacity: 0, y: distance }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.25 }}
+        transition={{
+          duration: 0.65,
+          delay,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
+        {children}
+      </m.div>
+    </LazyMotion>
   );
 }

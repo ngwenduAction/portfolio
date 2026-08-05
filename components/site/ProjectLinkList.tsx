@@ -59,7 +59,7 @@ export default function ProjectLinkList({
               aria-label={`${projectTitle ? `${projectTitle} ` : ""}${item.label} (opens in a new tab)`}
               className="text-link project-link project-link--external"
               href={item.href}
-              rel="noreferrer"
+              rel="noopener noreferrer"
               target="_blank"
             >
               {item.label}

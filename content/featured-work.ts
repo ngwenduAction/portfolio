@@ -73,6 +73,10 @@ export type FeaturedWork = {
   status: string;
   detailIntro: string;
   media: WorkMedia;
+  social: {
+    title: string;
+    description: string;
+  };
   links: WorkProjectLinks;
   caseStudy: WorkCaseStudy;
 };
@@ -112,6 +116,11 @@ export const featuredWork: FeaturedWork[] = [
       alt: "SÉRA project preview showing the editorial skincare microsite on desktop and mobile",
       width: 1477,
       height: 704,
+    },
+    social: {
+      title: "S\u00C9RA \u2014 Creative Direction & Motion Study",
+      description:
+        "An editorial frontend and motion study by Ngwendu Gambu, focused on responsive media, hierarchy, and restrained interaction.",
     },
     links: {
       caseStudy: {
@@ -171,7 +180,7 @@ export const featuredWork: FeaturedWork[] = [
       ],
       outcomeHeading: "Outcome / reflection",
       outcomeIntro:
-        "S\u00C9RA clarifies what Negative Space looks like when the work is grounded in editorial frontend systems: typography, media, motion, and spacing all behaving as parts of one disciplined surface.",
+        "S\u00C9RA clarifies the value of editorial frontend systems: typography, media, motion, and spacing behaving as parts of one disciplined surface.",
       outcomePoints: [
         "The project reinforces that polish is usually structural before it is decorative.",
         "It shows how restrained motion can strengthen hierarchy instead of competing with it.",
@@ -183,7 +192,7 @@ export const featuredWork: FeaturedWork[] = [
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
       ],
       closingNote:
-        "S\u00C9RA is the clearest expression of Negative Space as an editorial frontend practice: measured, structural, and precise about how interface polish is actually achieved.",
+        "S\u00C9RA is an editorial frontend study that stays measured, structural, and precise about how interface polish is actually achieved.",
     },
   },
   {
@@ -220,6 +229,11 @@ export const featuredWork: FeaturedWork[] = [
       alt: "Signal Field project preview showing a luminous blue procedural particle field",
       width: 1486,
       height: 704,
+    },
+    social: {
+      title: "Signal Field \u2014 Real-Time Graphics Experiment",
+      description:
+        "A real-time graphics experiment by Ngwendu Gambu exploring shader logic, instancing, and GPU-first procedural animation.",
     },
     links: {
       caseStudy: {
@@ -291,7 +305,7 @@ export const featuredWork: FeaturedWork[] = [
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
       ],
       closingNote:
-        "Signal Field marks the point where Negative Space stops being only about interface composition and starts speaking more clearly in rendering systems, procedural motion, and real-time surface logic.",
+        "Signal Field extends the practice beyond interface composition into rendering systems, procedural motion, and real-time surface logic.",
     },
   },
   {
@@ -323,12 +337,17 @@ export const featuredWork: FeaturedWork[] = [
       "moBikes is a practical HTML, CSS, and JavaScript build prepared for hosting, WhatsApp contact, and a live Google Form application flow.",
     status: "Delivered commercial website",
     detailIntro:
-      "moBikes shows Negative Space in a client-facing mode: translating a real business model into a shorter, clearer, and more trustworthy responsive surface without losing polish.",
+      "moBikes shows the practice in a client-facing mode: translating a real business model into a shorter, clearer, and more trustworthy responsive surface without losing polish.",
     media: {
       src: "/work-mobikes-home.jpg",
       alt: "moBikes live homepage presenting its rent-to-own mobility offer",
       width: 1600,
       height: 900,
+    },
+    social: {
+      title: "moBikes \u2014 Commercial Website",
+      description:
+        "A conversion-focused commercial website by Ngwendu Gambu, built to clarify a rent-to-own offer and create a direct path to application.",
     },
     links: {
       caseStudy: {
@@ -397,7 +416,7 @@ export const featuredWork: FeaturedWork[] = [
       ],
       outcomeHeading: "Outcome / reflection",
       outcomeIntro:
-        "moBikes demonstrates how Negative Space operates when the work is accountable to a real business outcome: stronger trust, a clearer offer, and a more direct path to application.",
+        "moBikes demonstrates how the work changes when it is accountable to a real business outcome: stronger trust, a clearer offer, and a more direct path to application.",
       outcomePoints: [
         "The project proves client-facing delivery with practical frontend execution instead of purely conceptual framing.",
         "It shows an ability to simplify information architecture around business goals and evolving feedback.",
@@ -447,6 +466,11 @@ export const featuredWork: FeaturedWork[] = [
       alt: "KOI live platform home screen with an editorial Bible Study Class interface",
       width: 1570,
       height: 980,
+    },
+    social: {
+      title: "KOI \u2014 Active Client Platform",
+      description:
+        "An active full-stack client platform by Ngwendu Gambu, built with Next.js, Prisma, PostgreSQL, AWS RDS, and exact responsive UI systems.",
     },
     links: {
       caseStudy: {
@@ -527,7 +551,7 @@ export const featuredWork: FeaturedWork[] = [
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
       ],
       closingNote:
-        "KOI is the clearest proof that Negative Space is not only a visual practice. It is also a full-stack engineering practice capable of building robust data systems, production infrastructure, and premium interfaces at the same time.",
+        "KOI proves that the practice is not only visual. It also spans robust data systems, production infrastructure, and premium interfaces built as one product surface.",
     },
   },
 ];

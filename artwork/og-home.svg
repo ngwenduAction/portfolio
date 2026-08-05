@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#090b0a"/>
+  <g stroke="#f3efe5" stroke-opacity="0.1" stroke-width="1">
+    <path d="M0 90H1200M0 315H1200M0 540H1200"/>
+    <path d="M72 0V630M600 0V630M1128 0V630"/>
+  </g>
+  <path d="M72 72H1128" stroke="#c8ff65" stroke-width="3"/>
+  <g fill="#f3efe5">
+    <text x="72" y="210" font-family="Georgia, 'Times New Roman', serif" font-size="104" letter-spacing="-4">NGWENDU</text>
+    <text x="72" y="310" font-family="Georgia, 'Times New Roman', serif" font-size="104" letter-spacing="-4">GAMBU</text>
+    <text x="76" y="392" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="3">FULL-STACK SOFTWARE ENGINEER</text>
+    <text x="76" y="430" font-family="Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="3">&amp; CREATIVE DEVELOPER</text>
+    <text x="76" y="515" font-family="Arial, sans-serif" font-size="17" letter-spacing="4" opacity="0.68">JOHANNESBURG, SOUTH AFRICA</text>
+  </g>
+  <g transform="translate(782 164)" fill="none">
+    <circle cx="154" cy="151" r="123" stroke="#f3efe5" stroke-opacity="0.18"/>
+    <circle cx="154" cy="151" r="58" stroke="#f3efe5" stroke-opacity="0.18"/>
+    <path d="M0 151H308M154 0V302" stroke="#f3efe5" stroke-opacity="0.18"/>
+    <path d="M0 206h46l26-54 38 97 40-87 37 57 32-83 37 70h52" stroke="#c8ff65" stroke-width="4"/>
+    <circle cx="219" cy="136" r="7" fill="#c8ff65"/>
+  </g>
+  <g fill="#f3efe5" font-family="Arial, sans-serif" font-size="13" letter-spacing="2" opacity="0.55">
+    <text x="794" y="134">26.2041 S</text>
+    <text x="1006" y="500">28.0473 E</text>
+  </g>
+</svg>

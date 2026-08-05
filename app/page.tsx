@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import CapabilitiesSection from "@/components/site/CapabilitiesSection";
 import ContactSection from "@/components/site/ContactSection";
 import HeroManifestoSection from "@/components/site/HeroManifestoSection";
@@ -6,11 +8,36 @@ import SelectedWorkSection from "@/components/site/SelectedWorkSection";
 import SiteFooter from "@/components/site/SiteFooter";
 import SiteHeader from "@/components/site/SiteHeader";
 import { contactContent } from "@/content/contact";
-import { siteContent } from "@/content/site";
+import { siteContent, siteUrl } from "@/content/site";
 
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
-).replace(/\/$/, "");
+export const metadata: Metadata = {
+  title: siteContent.title,
+  description: siteContent.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: siteContent.title,
+    description: siteContent.description,
+    type: "website",
+    siteName: siteContent.name,
+    url: "/",
+    images: [
+      {
+        url: "/og-home.png",
+        width: 1200,
+        height: 630,
+        alt: "Ngwendu Gambu, full-stack software engineer and creative developer in Johannesburg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteContent.title,
+    description: siteContent.description,
+    images: ["/og-home.png"],
+  },
+};
 
 const personStructuredData = {
   "@context": "https://schema.org",

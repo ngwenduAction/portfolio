@@ -1,6 +1,6 @@
-# Negative Space
+# Ngwendu Gambu Portfolio
 
-Negative Space is a Next.js portfolio focused on frontend systems, motion design implementation, and the long path toward Three.js, GLSL, and WebGL direction.
+An employment-first portfolio for Johannesburg-based full-stack software engineer and creative developer Ngwendu Gambu. It presents production client platforms, responsive frontend systems, and an active real-time graphics practice.
 
 ## Current scope
 
