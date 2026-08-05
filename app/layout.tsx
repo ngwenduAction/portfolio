@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   ),
   title: {
     default: siteContent.title,
-    template: `%s | ${siteContent.title}`,
+    template: `%s | ${siteContent.name}`,
   },
   description: siteContent.description,
   alternates: {
@@ -43,14 +43,14 @@ export const metadata: Metadata = {
     title: siteContent.title,
     description: siteContent.description,
     type: "website",
-    siteName: siteContent.title,
+    siteName: siteContent.name,
     url: "/",
     images: [
       {
         url: "/og-home.png",
         width: 1408,
         height: 768,
-        alt: "Negative Space homepage preview",
+        alt: "Ngwendu Gambu portfolio homepage preview",
       },
     ],
   },

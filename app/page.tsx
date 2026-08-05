@@ -8,14 +8,16 @@ import SiteHeader from "@/components/site/SiteHeader";
 
 export default function Home() {
   return (
-    <main className="min-h-screen" id="main-content">
+    <>
       <SiteHeader />
-      <HeroManifestoSection />
-      <SelectedWorkSection />
-      <PracticeSection />
-      <ExperimentsSection />
-      <RoadmapSection />
-      <ContactSection />
-    </main>
+      <main className="min-h-screen" id="main-content">
+        <HeroManifestoSection />
+        <SelectedWorkSection />
+        <PracticeSection />
+        <ExperimentsSection />
+        <RoadmapSection />
+        <ContactSection />
+      </main>
+    </>
   );
 }
