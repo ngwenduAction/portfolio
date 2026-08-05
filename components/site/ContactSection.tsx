@@ -1,51 +1,66 @@
 import { contactContent } from "@/content/contact";
-import { siteContent } from "@/content/site";
 import Reveal from "@/components/site/Reveal";
 
 export default function ContactSection() {
+  const employmentHref = `mailto:${contactContent.email}?subject=${encodeURIComponent(
+    contactContent.employment.subject,
+  )}`;
+  const studioHref = `mailto:${contactContent.email}?subject=${encodeURIComponent(
+    contactContent.studio.subject,
+  )}`;
+
   return (
-    <section className="section-shell pb-20 sm:pb-24" id="contact">
-      <div className="page-shell grid gap-10 lg:grid-cols-[minmax(0,1.22fr)_minmax(18rem,0.78fr)]">
-        <Reveal>
-          <header className="max-w-4xl">
-            <p className="eyebrow">Contact</p>
-            <h2 className="section-title">
-              The page closes on a direct line, not on a sales pitch.
-            </h2>
-            <p className="body-copy mt-6 max-w-2xl">{contactContent.note}</p>
-            <a
-              className="contact-email font-display mt-10 inline-flex text-4xl leading-none text-white transition duration-300 hover:text-[color:var(--accent)] sm:text-5xl"
-              href={`mailto:${contactContent.email}`}
-            >
-              {contactContent.email}
+    <section
+      aria-labelledby="contact-title"
+      className="section-shell contact-section"
+      id="contact"
+    >
+      <div className="page-shell">
+        <div className="contact-layout">
+          <Reveal className="employment-contact">
+            <header>
+              <p className="eyebrow">{contactContent.employment.eyebrow}</p>
+              <h2 className="section-title" id="contact-title">
+                {contactContent.employment.heading}
+              </h2>
+              <p className="body-copy">{contactContent.employment.note}</p>
+            </header>
+
+            <a className="employment-action" href={employmentHref}>
+              <span>{contactContent.employment.actionLabel}</span>
+              <span aria-hidden="true">&#8599;</span>
             </a>
-          </header>
-        </Reveal>
+          </Reveal>
 
-        <Reveal delay={0.12}>
-          <aside className="panel-strong flex h-full flex-col gap-8">
+          <Reveal className="professional-links" delay={0.08}>
+            <p className="eyebrow">Professional links</p>
+            <ul>
+              {contactContent.professionalLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    aria-label={`${link.accessibleLabel} (opens in a new tab)`}
+                    href={link.href}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    <span>{link.label}</span>
+                    <span aria-hidden="true">&#8599;</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="professional-links__email">{contactContent.email}</p>
+          </Reveal>
+        </div>
+
+        <Reveal>
+          <aside aria-labelledby="studio-enquiries-title" className="studio-route">
             <div>
-              <p className="eyebrow">Links</p>
-              <ul className="space-y-4">
-                {contactContent.links.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      className="quiet-link text-lg text-white/78"
-                      href={link.href}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <p className="eyebrow">{contactContent.studio.eyebrow}</p>
+              <h3 id="studio-enquiries-title">Maneno</h3>
             </div>
-
-            <div className="fine-rule pt-6">
-              <p className="eyebrow">Closing note</p>
-              <p className="body-copy-soft">{siteContent.footerNote}</p>
-            </div>
+            <p>{contactContent.studio.note}</p>
+            <a href={studioHref}>{contactContent.studio.actionLabel}</a>
           </aside>
         </Reveal>
       </div>
