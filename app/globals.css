@@ -1821,6 +1821,48 @@
   }
 }
 
+[data-reveal] {
+  transition:
+    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+}
+
+.work-entry--commercial {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 880px;
+}
+
+.work-entry--lab {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 525px;
+}
+
+.capability-row {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 335px;
+}
+
+.lab-detail {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
+
+.employment-contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 625px;
+}
+
+.professional-links {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 200px;
+}
+
+.reveal-ready [data-reveal]:not([data-revealed]) {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance, 22px));
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     scroll-behavior: auto;
@@ -1832,5 +1874,10 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }

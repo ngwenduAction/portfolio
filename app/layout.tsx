@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 
+import RevealController from "@/components/site/RevealController";
 import { siteContent, siteUrl } from "@/content/site";
 
 import "./globals.css";
@@ -51,6 +52,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <RevealController />
       </body>
     </html>
   );

@@ -1,23 +1,15 @@
-"use client";
-
-import { LazyMotion, m, useReducedMotion } from "framer-motion";
-import { useSyncExternalStore } from "react";
-
-const loadMotionFeatures = () =>
-  import("@/components/site/motion-features").then(
-    (module) => module.default,
-  );
-
-const subscribeToBrowserCapability = () => () => {};
-const getBrowserCapability = () =>
-  typeof window !== "undefined" && "IntersectionObserver" in window;
-const getServerCapability = () => false;
+import type { CSSProperties, ReactNode } from "react";
 
 type RevealProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   delay?: number;
   distance?: number;
+};
+
+type RevealStyle = CSSProperties & {
+  "--reveal-delay": string;
+  "--reveal-distance": string;
 };
 
 export default function Reveal({
@@ -26,32 +18,14 @@ export default function Reveal({
   delay = 0,
   distance = 22,
 }: RevealProps) {
-  const prefersReducedMotion = useReducedMotion();
-  const canAnimateInView = useSyncExternalStore(
-    subscribeToBrowserCapability,
-    getBrowserCapability,
-    getServerCapability,
-  );
-
-  if (!canAnimateInView || prefersReducedMotion) {
-    return <div className={className}>{children}</div>;
-  }
+  const style: RevealStyle = {
+    "--reveal-delay": `${delay}s`,
+    "--reveal-distance": `${distance}px`,
+  };
 
   return (
-    <LazyMotion features={loadMotionFeatures} strict>
-      <m.div
-        className={className}
-        initial={{ opacity: 0, y: distance }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.25 }}
-        transition={{
-          duration: 0.65,
-          delay,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-      >
-        {children}
-      </m.div>
-    </LazyMotion>
+    <div className={className} data-reveal="" style={style}>
+      {children}
+    </div>
   );
 }
