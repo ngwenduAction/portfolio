@@ -2,15 +2,7 @@ import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack(config) {
-    // Add the rule to handle SVG files with @svgr/webpack
-    config.module.rules.push({
-      test: /\.svg$/, // Apply this rule to .svg files
-      use: ["@svgr/webpack"], // Use @svgr/webpack to transform SVG into React components
-    });
-
-    return config;
-  },
+  devIndicators: false,
 };
 
 export default withSentryConfig(nextConfig, {
@@ -29,9 +21,4 @@ export default withSentryConfig(nextConfig, {
   // Hides source maps from generated client bundles
   hideSourceMaps: true,
 
-  // Automatically tree-shake Sentry logger statements to reduce bundle size
-  disableLogger: true,
-
-  // Enables automatic instrumentation of Vercel Cron Monitors
-  automaticVercelMonitors: true,
 });

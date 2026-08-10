@@ -27,6 +27,13 @@ export type WorkSignal = {
   value: string;
 };
 
+export type WorkMedia = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export type WorkCaseStudy = {
   introLabel: string;
   introSummary: string;
@@ -47,11 +54,14 @@ export type WorkCaseStudy = {
 
 export type FeaturedWork = {
   slug: FeaturedWorkSlug;
-  homepageGroup: "anchor" | "supporting";
+  homepageTier: "commercial" | "lab";
+  homepageOrder: number;
   index: string;
   title: string;
   path: string;
   label: string;
+  classification: string;
+  evidence: string;
   year: string;
   thesis: string;
   summary: string;
@@ -62,6 +72,11 @@ export type FeaturedWork = {
   rendering: string;
   status: string;
   detailIntro: string;
+  media: WorkMedia;
+  social: {
+    title: string;
+    description: string;
+  };
   links: WorkProjectLinks;
   caseStudy: WorkCaseStudy;
 };
@@ -69,15 +84,18 @@ export type FeaturedWork = {
 export const featuredWork: FeaturedWork[] = [
   {
     slug: "sera",
-    homepageGroup: "anchor",
-    index: "01",
+    homepageTier: "lab",
+    homepageOrder: 4,
+    index: "04",
     title: "S\u00C9RA",
     path: "/work/sera",
-    label: "Selected work",
+    label: "Creative study",
+    classification: "CREATIVE DIRECTION / MOTION STUDY",
+    evidence: "Self-directed · editorial systems / responsive motion",
     year: "Current chapter",
     thesis: "Structure held in tension with restraint.",
     summary:
-      "S\u00C9RA is framed here as a system-led surface: precise layout, controlled typography, and motion that reinforces structure rather than distracting from it.",
+      "A self-directed skincare microsite study using editorial hierarchy, responsive media, and restrained motion to hold a premium interface surface.",
     role: "Interface system direction / frontend implementation",
     focus: [
       "layout rhythm and hierarchy",
@@ -90,9 +108,20 @@ export const featuredWork: FeaturedWork[] = [
       "Motion is treated as a compositional layer: transitions should support reading order, reveal density gradually, and preserve clarity under interaction.",
     rendering:
       "The first-pass portfolio frames S\u00C9RA as a DOM-first system surface with room to absorb richer rendering layers later if they serve the work.",
-    status: "Detailed case study in progress",
+    status: "Self-directed creative study",
     detailIntro:
       "This scaffold keeps the route, language, and information shape in place while the fuller project documentation is still being written.",
+    media: {
+      src: "/og-sera.png",
+      alt: "SÉRA project preview showing the editorial skincare microsite on desktop and mobile",
+      width: 1477,
+      height: 704,
+    },
+    social: {
+      title: "S\u00C9RA \u2014 Creative Direction & Motion Study",
+      description:
+        "An editorial frontend and motion study by Ngwendu Gambu, focused on responsive media, hierarchy, and restrained interaction.",
+    },
     links: {
       caseStudy: {
         href: "/work/sera",
@@ -151,7 +180,7 @@ export const featuredWork: FeaturedWork[] = [
       ],
       outcomeHeading: "Outcome / reflection",
       outcomeIntro:
-        "S\u00C9RA clarifies what Negative Space looks like when the work is grounded in editorial frontend systems: typography, media, motion, and spacing all behaving as parts of one disciplined surface.",
+        "S\u00C9RA clarifies the value of editorial frontend systems: typography, media, motion, and spacing behaving as parts of one disciplined surface.",
       outcomePoints: [
         "The project reinforces that polish is usually structural before it is decorative.",
         "It shows how restrained motion can strengthen hierarchy instead of competing with it.",
@@ -163,20 +192,23 @@ export const featuredWork: FeaturedWork[] = [
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
       ],
       closingNote:
-        "S\u00C9RA is the clearest expression of Negative Space as an editorial frontend practice: measured, structural, and precise about how interface polish is actually achieved.",
+        "S\u00C9RA is an editorial frontend study that stays measured, structural, and precise about how interface polish is actually achieved.",
     },
   },
   {
     slug: "signal-field",
-    homepageGroup: "anchor",
-    index: "02",
+    homepageTier: "lab",
+    homepageOrder: 3,
+    index: "03",
     title: "Signal Field",
     path: "/work/signal-field",
-    label: "Selected work",
+    label: "Technical experiment",
+    classification: "REAL-TIME GRAPHICS EXPERIMENT",
+    evidence: "Self-directed · Three.js / GLSL / instancing / GPU animation",
     year: "Expanding surface",
     thesis: "Signal, drift, and atmosphere under system control.",
     summary:
-      "Signal Field carries the more atmospheric side of Negative Space: responsive fields, signal-driven motion, and visual direction that starts to lean toward spatial and real-time work.",
+      "A self-directed real-time graphics experiment built around shader logic, instancing, and GPU-led procedural motion.",
     role: "Motion direction / interaction design / frontend implementation",
     focus: [
       "responsive motion behavior",
@@ -189,9 +221,20 @@ export const featuredWork: FeaturedWork[] = [
       "Motion focuses on signal, drift, reveal, and timing relationships rather than decorative transitions. The direction should feel measured, not noisy.",
     rendering:
       "Signal Field is where the portfolio begins making room for Three.js, GLSL, and WebGL-backed surfaces without pretending those layers are already the whole story.",
-    status: "Detailed case study in progress",
+    status: "Self-directed technical experiment",
     detailIntro:
       "The current page is intentionally honest: it establishes the project language now and leaves room for deeper technical documentation later.",
+    media: {
+      src: "/og-signal-field.png",
+      alt: "Signal Field project preview showing a luminous blue procedural particle field",
+      width: 1486,
+      height: 704,
+    },
+    social: {
+      title: "Signal Field \u2014 Real-Time Graphics Experiment",
+      description:
+        "A real-time graphics experiment by Ngwendu Gambu exploring shader logic, instancing, and GPU-first procedural animation.",
+    },
     links: {
       caseStudy: {
         href: "/work/signal-field",
@@ -262,21 +305,24 @@ export const featuredWork: FeaturedWork[] = [
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
       ],
       closingNote:
-        "Signal Field marks the point where Negative Space stops being only about interface composition and starts speaking more clearly in rendering systems, procedural motion, and real-time surface logic.",
+        "Signal Field extends the practice beyond interface composition into rendering systems, procedural motion, and real-time surface logic.",
     },
   },
   {
     slug: "moBikes",
-    homepageGroup: "supporting",
-    index: "03",
+    homepageTier: "commercial",
+    homepageOrder: 2,
+    index: "02",
     title: "moBikes",
-    path: "/work/moBikes",
-    label: "Client-facing delivery",
+    path: "/work/mobikes",
+    label: "Client delivery",
+    classification: "COMMERCIAL WEBSITE",
+    evidence: "Sold and delivered",
     year: "Rent-to-own mobility website",
     thesis:
-      "Business clarity, trust, and application flow brought into one responsive surface.",
+      "Rent-to-own mobility explained through a clear path from the Hero Eco 150 offer to application.",
     summary:
-      "moBikes broadens the portfolio with practical client delivery: a South African rent-to-own mobility website shaped around trust, offer clarity, and a faster path to application.",
+      "My contribution covered content structure, UX simplification, visual direction, responsive frontend implementation, and direct application and WhatsApp pathways.",
     role: "Website design and front-end development",
     focus: [
       "conversion-focused information clarity",
@@ -289,15 +335,26 @@ export const featuredWork: FeaturedWork[] = [
       "Motion remains minimal and business-readable. The emphasis is on hierarchy, button clarity, and transitions that support scanning rather than competing with the primary offer.",
     rendering:
       "moBikes is a practical HTML, CSS, and JavaScript build prepared for hosting, WhatsApp contact, and a live Google Form application flow.",
-    status: "Live client preview",
+    status: "Delivered commercial website",
     detailIntro:
-      "moBikes shows Negative Space in a client-facing mode: translating a real business model into a shorter, clearer, and more trustworthy responsive surface without losing polish.",
+      "moBikes shows the practice in a client-facing mode: translating a real business model into a shorter, clearer, and more trustworthy responsive surface without losing polish.",
+    media: {
+      src: "/work-mobikes-home.jpg",
+      alt: "moBikes live homepage presenting its rent-to-own mobility offer",
+      width: 1600,
+      height: 900,
+    },
+    social: {
+      title: "moBikes \u2014 Commercial Website",
+      description:
+        "A conversion-focused commercial website by Ngwendu Gambu, built to clarify a rent-to-own offer and create a direct path to application.",
+    },
     links: {
       caseStudy: {
-        href: "/work/moBikes",
+        href: "/work/mobikes",
       },
       liveSite: {
-        href: "https://moBikes-preview.netlify.app/",
+        href: "https://www.mobikes.co.za/",
       },
     },
     caseStudy: {
@@ -359,7 +416,7 @@ export const featuredWork: FeaturedWork[] = [
       ],
       outcomeHeading: "Outcome / reflection",
       outcomeIntro:
-        "moBikes demonstrates how Negative Space operates when the work is accountable to a real business outcome: stronger trust, a clearer offer, and a more direct path to application.",
+        "moBikes demonstrates how the work changes when it is accountable to a real business outcome: stronger trust, a clearer offer, and a more direct path to application.",
       outcomePoints: [
         "The project proves client-facing delivery with practical frontend execution instead of purely conceptual framing.",
         "It shows an ability to simplify information architecture around business goals and evolving feedback.",
@@ -376,16 +433,19 @@ export const featuredWork: FeaturedWork[] = [
   },
   {
     slug: "koi",
-    homepageGroup: "supporting",
-    index: "04",
+    homepageTier: "commercial",
+    homepageOrder: 1,
+    index: "01",
     title: "KOI",
     path: "/work/koi",
-    label: "Full-stack architectural anchor",
+    label: "Active client work",
+    classification: "ACTIVE CLIENT PLATFORM",
+    evidence: "Sold commercial engagement · ongoing development",
     year: "Editorial-grade full-stack platform",
     thesis:
-      "Premium visual execution backed by rigorous schema design, server logic, and production infrastructure.",
+      "Lessons, membership, giving, visits, and editorial content held in one coherent digital platform.",
     summary:
-      "KOI strengthens the portfolio as a technical anchor: a premium full-stack platform engineered with Next.js, Prisma, PostgreSQL, AWS RDS, and Vercel to prove data-driven delivery at enterprise depth.",
+      "My contribution spans database schema design, server-side logic, deployment configuration, and responsive interface engineering.",
     role: "Full-Stack Software Engineering & Architecture",
     focus: [
       "relational database and schema design",
@@ -398,15 +458,26 @@ export const featuredWork: FeaturedWork[] = [
       "Motion stays subordinate to authority and structure. The emphasis is on exact layout behavior, premium transitions, and a frontend that feels composed because the underlying system is stable.",
     rendering:
       "The platform is built in Next.js with Tailwind CSS, Prisma ORM, PostgreSQL on AWS RDS, and Vercel-based deployment and environment management.",
-    status: "Live production platform",
+    status: "Active client platform · ongoing development",
     detailIntro:
       "KOI shows the practice at its most infrastructural: a full-stack platform where database architecture, deployment pipelines, and exacting frontend geometry all have to hold together as one system.",
+    media: {
+      src: "/work-koi-home.jpg",
+      alt: "KOI live platform home screen with an editorial Bible Study Class interface",
+      width: 1570,
+      height: 980,
+    },
+    social: {
+      title: "KOI \u2014 Active Client Platform",
+      description:
+        "An active full-stack client platform by Ngwendu Gambu, built with Next.js, Prisma, PostgreSQL, AWS RDS, and exact responsive UI systems.",
+    },
     links: {
       caseStudy: {
         href: "/work/koi",
       },
       liveSite: {
-        href: "https://koi-church.vercel.app",
+        href: "https://koi-biblestudy.vercel.app/",
       },
     },
     caseStudy: {
@@ -480,7 +551,7 @@ export const featuredWork: FeaturedWork[] = [
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
       ],
       closingNote:
-        "KOI is the clearest proof that Negative Space is not only a visual practice. It is also a full-stack engineering practice capable of building robust data systems, production infrastructure, and premium interfaces at the same time.",
+        "KOI proves that the practice is not only visual. It also spans robust data systems, production infrastructure, and premium interfaces built as one product surface.",
     },
   },
 ];
@@ -489,10 +560,10 @@ export function getFeaturedWorkBySlug(slug: FeaturedWorkSlug) {
   return featuredWork.find((item) => item.slug === slug);
 }
 
-export const anchorWork = featuredWork.filter(
-  (item) => item.homepageGroup === "anchor",
-);
+export const commercialWork = featuredWork
+  .filter((item) => item.homepageTier === "commercial")
+  .sort((a, b) => a.homepageOrder - b.homepageOrder);
 
-export const supportingWork = featuredWork.filter(
-  (item) => item.homepageGroup === "supporting",
-);
+export const labWork = featuredWork
+  .filter((item) => item.homepageTier === "lab")
+  .sort((a, b) => a.homepageOrder - b.homepageOrder);

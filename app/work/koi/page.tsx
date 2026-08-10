@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import ProjectLinkList from "@/components/site/ProjectLinkList";
 import Reveal from "@/components/site/Reveal";
 import { getFeaturedWorkBySlug } from "@/content/featured-work";
+import { createProjectMetadata } from "@/lib/project-metadata";
 
 export function generateMetadata(): Metadata {
   const project = getFeaturedWorkBySlug("koi");
@@ -13,35 +14,7 @@ export function generateMetadata(): Metadata {
     return {};
   }
 
-  const description = `${project.summary} ${project.caseStudy.introSummary}`;
-
-  return {
-    title: `${project.title} - Editorial-Grade Full-Stack Platform`,
-    description,
-    alternates: {
-      canonical: project.path,
-    },
-    openGraph: {
-      title: `${project.title} - Editorial-Grade Full-Stack Platform`,
-      description,
-      type: "article",
-      url: project.path,
-      images: [
-        {
-          url: "/og-home.png",
-          width: 1408,
-          height: 768,
-          alt: "Negative Space portfolio preview",
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${project.title} - Editorial-Grade Full-Stack Platform`,
-      description,
-      images: ["/og-home.png"],
-    },
-  };
+  return createProjectMetadata(project);
 }
 
 export default function KoiPage() {
@@ -64,7 +37,7 @@ export default function KoiPage() {
                 className="quiet-link text-sm uppercase tracking-[0.22em] text-white/52"
                 href="/"
               >
-                Negative Space
+                Ngwendu Gambu
               </Link>
             </div>
           </Reveal>

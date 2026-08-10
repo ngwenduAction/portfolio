@@ -1,12 +1,15 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
+import type { CSSProperties, ReactNode } from "react";
 
 type RevealProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   delay?: number;
   distance?: number;
+};
+
+type RevealStyle = CSSProperties & {
+  "--reveal-delay": string;
+  "--reveal-distance": string;
 };
 
 export default function Reveal({
@@ -15,21 +18,14 @@ export default function Reveal({
   delay = 0,
   distance = 22,
 }: RevealProps) {
-  const prefersReducedMotion = useReducedMotion();
+  const style: RevealStyle = {
+    "--reveal-delay": `${delay}s`,
+    "--reveal-distance": `${distance}px`,
+  };
 
   return (
-    <motion.div
-      className={className}
-      initial={prefersReducedMotion ? { opacity: 1 } : { opacity: 0, y: distance }}
-      whileInView={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{
-        duration: prefersReducedMotion ? 0 : 0.65,
-        delay,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
+    <div className={className} data-reveal="" style={style}>
       {children}
-    </motion.div>
+    </div>
   );
 }
