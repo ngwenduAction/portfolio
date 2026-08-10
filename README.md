@@ -1,33 +1,53 @@
 # Ngwendu Gambu Portfolio
 
-An employment-first portfolio for Johannesburg-based full-stack software engineer and creative developer Ngwendu Gambu. It presents production client platforms, responsive frontend systems, and an active real-time graphics practice.
+The source for [portfolio-ngwendu.vercel.app](https://portfolio-ngwendu.vercel.app), an employment-first portfolio for Johannesburg-based Full-Stack Software Engineer and Creative Developer Ngwendu Gambu.
 
-## Current scope
+The site connects commercial product delivery, responsive frontend systems, and an active real-time graphics practice without presenting them as interchangeable portfolio cards.
 
-Phase 1 rebuild work focuses on:
+## Selected work
 
-- authored homepage structure
-- modular content architecture
-- selected work framing for SÉRA and Signal Field
-- practice, experiments, roadmap, and contact sections
-- removal of template-era portfolio sections and placeholder content
+- [KOI](https://portfolio-ngwendu.vercel.app/work/koi) presents an active client platform built around Next.js, relational data modelling, and precise responsive interface engineering.
+- [moBikes](https://portfolio-ngwendu.vercel.app/work/mobikes) documents sold commercial work focused on trust, offer clarity, and a direct application path.
+- [Signal Field](https://portfolio-ngwendu.vercel.app/work/signal-field) examines GPU-driven animation through Three.js, instancing, GLSL, procedural motion, and bloom.
+- [SÉRA](https://portfolio-ngwendu.vercel.app/work/sera) explores editorial frontend systems, reusable GSAP motion, responsive media, and reduced-motion support.
 
-## Development
+## Technical foundation
+
+- Next.js App Router, React, and TypeScript
+- modular typed content for project and portfolio copy
+- server-rendered structure with isolated client-side motion
+- Framer Motion with reduced-motion fallbacks
+- responsive image handling through `next/image`
+- metadata, social previews, sitemap, robots, and structured data
+- Sentry runtime instrumentation with source-map handling at build time
+
+The architecture intentionally leaves room for future WebGL-heavy work without making a canvas runtime part of every page.
+
+## Routes
+
+```text
+/
+/work/koi
+/work/mobikes
+/work/signal-field
+/work/sera
+```
+
+## Local development
 
 ```bash
+npm install
 npm run dev
 ```
 
-Open `http://localhost:3000` locally.
+Open `http://localhost:3000`.
 
-## Lint
+## Verification
 
 ```bash
 npm run lint
+npm run typecheck
+npm run build
 ```
 
-## Notes
-
-- This pass is intentionally restrained.
-- The site is being rebuilt to stay expandable for future WebGL-heavy work.
-- Detailed case study documentation for SÉRA and Signal Field is still in progress.
+The production project deploys from the repository's `main` branch through its existing Vercel Git integration.
