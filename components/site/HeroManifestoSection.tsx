@@ -24,6 +24,7 @@ export default function HeroManifestoSection() {
             <div className="hero-actions">
               <a
                 className="hero-action hero-action--primary"
+                data-cursor="Explore"
                 href={siteContent.heroPrimaryAction.href}
               >
                 {siteContent.heroPrimaryAction.label}

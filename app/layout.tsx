@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 
+import PointerField from "@/components/site/PointerField";
 import RevealController from "@/components/site/RevealController";
 import { siteContent, siteUrl } from "@/content/site";
 
@@ -52,6 +53,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <PointerField />
         <RevealController />
       </body>
     </html>

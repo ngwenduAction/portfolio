@@ -26,7 +26,11 @@ export default function ContactSection() {
               <p className="body-copy">{contactContent.employment.note}</p>
             </header>
 
-            <a className="employment-action" href={employmentHref}>
+            <a
+              className="employment-action"
+              data-cursor="Connect"
+              href={employmentHref}
+            >
               <span>{contactContent.employment.actionLabel}</span>
               <span aria-hidden="true">&#8599;</span>
             </a>
