@@ -58,6 +58,7 @@ export default function ProjectLinkList({
             <a
               aria-label={`${projectTitle ? `${projectTitle} ` : ""}${item.label} (opens in a new tab)`}
               className="text-link project-link project-link--external"
+              data-cursor={item.key === "live-site" ? "Visit" : "Code"}
               href={item.href}
               rel="noopener noreferrer"
               target="_blank"
@@ -69,6 +70,7 @@ export default function ProjectLinkList({
             <Link
               aria-label={`${projectTitle ? `${projectTitle} ` : ""}${item.label}`}
               className="text-link project-link"
+              data-cursor="Read"
               href={item.href}
             >
               {item.label}
