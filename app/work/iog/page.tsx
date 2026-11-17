@@ -8,9 +8,7 @@ import { getFeaturedWorkBySlug } from "@/content/featured-work";
 import { createProjectMetadata } from "@/lib/project-metadata";
 
 export function generateMetadata(): Metadata {
-  const project = getFeaturedWorkBySlug(
-    "koi" as Parameters<typeof getFeaturedWorkBySlug>[0],
-  );
+  const project = getFeaturedWorkBySlug("iog");
 
   if (!project) {
     return {};
@@ -20,9 +18,7 @@ export function generateMetadata(): Metadata {
 }
 
 export default function IogPage() {
-  const project = getFeaturedWorkBySlug(
-    "koi" as Parameters<typeof getFeaturedWorkBySlug>[0],
-  );
+  const project = getFeaturedWorkBySlug("iog");
 
   if (!project) {
     notFound();
@@ -286,7 +282,7 @@ export default function IogPage() {
               </div>
 
               <div className="fine-rule pt-5">
-                <p className="eyebrow">KOI</p>
+                <p className="eyebrow">IOG</p>
                 <p className="body-copy-soft">
                   A case study in full-stack architecture, relational data
                   design, production deployment, and premium frontend precision
@@ -301,7 +297,7 @@ export default function IogPage() {
               <div>
                 <p className="eyebrow">{project.caseStudy.outcomeHeading}</p>
                 <h2 className="section-title text-[2.35rem] sm:text-[3rem]">
-                  What KOI establishes inside the portfolio.
+                  What IOG establishes inside the portfolio.
                 </h2>
               </div>
               <p className="body-copy">{project.caseStudy.outcomeIntro}</p>
