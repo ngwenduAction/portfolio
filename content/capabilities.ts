@@ -30,8 +30,8 @@ export const capabilityAreas: CapabilityArea[] = [
     ],
     evidence: [
       {
-        project: "KOI",
-        href: "/work/koi",
+        project: "IOG",
+        href: "/work/iog",
         context: "Commercial evidence",
       },
     ],
@@ -52,8 +52,8 @@ export const capabilityAreas: CapabilityArea[] = [
     ],
     evidence: [
       {
-        project: "KOI",
-        href: "/work/koi",
+        project: "IOG",
+        href: "/work/iog",
         context: "Commercial evidence",
       },
       {
