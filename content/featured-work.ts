@@ -474,7 +474,7 @@ export const featuredWork: FeaturedWork[] = [
     },
     links: {
       caseStudy: {
-        href: "/work/iog",
+        href: "/work/koi",
       },
       liveSite: {
         href: "https://iogsa.vercel.app/",
