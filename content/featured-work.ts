@@ -1,4 +1,4 @@
-export type FeaturedWorkSlug = "sera" | "signal-field" | "moBikes" | "koi";
+export type FeaturedWorkSlug = "sera" | "signal-field" | "moBikes" | "iog";
 
 export type WorkLink = {
   label: string;
@@ -432,12 +432,12 @@ export const featuredWork: FeaturedWork[] = [
     },
   },
   {
-    slug: "koi",
+    slug: "iog",
     homepageTier: "commercial",
     homepageOrder: 1,
     index: "01",
-    title: "KOI",
-    path: "/work/koi",
+    title: "IOG",
+    path: "/work/iog",
     label: "Active client work",
     classification: "ACTIVE CLIENT PLATFORM",
     evidence: "Sold commercial engagement · ongoing development",
@@ -453,28 +453,28 @@ export const featuredWork: FeaturedWork[] = [
       "editorial-grade frontend precision under system constraints",
     ],
     systems:
-      "KOI is about marrying commanding frontend structure with backend rigor: relational mapping, server-rendered routing, environment discipline, and a UI system precise enough to carry a premium editorial identity without drifting from the underlying architecture.",
+      "IOG is about marrying commanding frontend structure with backend rigor: relational mapping, server-rendered routing, environment discipline, and a UI system precise enough to carry a premium editorial identity without drifting from the underlying architecture.",
     motion:
       "Motion stays subordinate to authority and structure. The emphasis is on exact layout behavior, premium transitions, and a frontend that feels composed because the underlying system is stable.",
     rendering:
       "The platform is built in Next.js with Tailwind CSS, Prisma ORM, PostgreSQL on AWS RDS, and Vercel-based deployment and environment management.",
     status: "Active client platform · ongoing development",
     detailIntro:
-      "KOI shows the practice at its most infrastructural: a full-stack platform where database architecture, deployment pipelines, and exacting frontend geometry all have to hold together as one system.",
+      "IOG shows the practice at its most infrastructural: a full-stack platform where database architecture, deployment pipelines, and exacting frontend geometry all have to hold together as one system.",
     media: {
-      src: "/work-koi-home.jpg",
-      alt: "KOI live platform home screen with an editorial Bible Study Class interface",
+      src: "/work-iog-home.jpg",
+      alt: "IOG live platform home screen with an editorial Bible Study Class interface",
       width: 1570,
       height: 980,
     },
     social: {
-      title: "KOI \u2014 Active Client Platform",
+      title: "IOG \u2014 Active Client Platform",
       description:
         "An active full-stack client platform by Ngwendu Gambu, built with Next.js, Prisma, PostgreSQL, AWS RDS, and exact responsive UI systems.",
     },
     links: {
       caseStudy: {
-        href: "/work/koi",
+        href: "/work/iog",
       },
       liveSite: {
         href: "https://iogsa.vercel.app/",
@@ -483,7 +483,7 @@ export const featuredWork: FeaturedWork[] = [
     caseStudy: {
       introLabel: "Full-stack architecture",
       introSummary:
-        "KOI is framed as a technical anchor for the portfolio: a project where premium editorial presentation depends on disciplined full-stack engineering, relational data modeling, and production infrastructure that can support a high-spec frontend.",
+        "IOG is framed as a technical anchor for the portfolio: a project where premium editorial presentation depends on disciplined full-stack engineering, relational data modeling, and production infrastructure that can support a high-spec frontend.",
       heroSignals: [
         {
           label: "Core stack",
@@ -505,7 +505,7 @@ export const featuredWork: FeaturedWork[] = [
       ],
       systemsHeading: "Key systems and architectural decisions",
       systemsIntro:
-        "KOI matters because the frontend ambition is inseparable from the backend architecture. The project had to prove that a premium surface can still rest on a serious application foundation: schema design, deployment discipline, routing structure, and data-aware engineering decisions.",
+        "IOG matters because the frontend ambition is inseparable from the backend architecture. The project had to prove that a premium surface can still rest on a serious application foundation: schema design, deployment discipline, routing structure, and data-aware engineering decisions.",
       systemsDecisions: [
         {
           title: "Relational schema as product foundation",
@@ -522,7 +522,7 @@ export const featuredWork: FeaturedWork[] = [
       ],
       implementationHeading: "Implementation notes",
       implementationIntro:
-        "KOI proves engineering maturity in the connective tissue: migrations, environment handling, deployment discipline, asset-level layout fixes, and the constant balancing act between polished presentation and robust application infrastructure.",
+        "IOG proves engineering maturity in the connective tissue: migrations, environment handling, deployment discipline, asset-level layout fixes, and the constant balancing act between polished presentation and robust application infrastructure.",
       implementationNotes: [
         {
           title: "Database pipeline management",
@@ -539,7 +539,7 @@ export const featuredWork: FeaturedWork[] = [
       ],
       outcomeHeading: "Outcome / reflection",
       outcomeIntro:
-        "KOI establishes the portfolio’s strongest proof of full-stack software engineering: production-ready data architecture, deployment infrastructure, and a premium interface held to exacting standards.",
+        "IOG establishes the portfolio’s strongest proof of full-stack software engineering: production-ready data architecture, deployment infrastructure, and a premium interface held to exacting standards.",
       outcomePoints: [
         "The project proves deeper systemic knowledge across schema design, server logic, deployment, and full-stack delivery.",
         "It shows that premium frontend execution can coexist with heavy backend requirements instead of being separated from them.",
@@ -551,7 +551,7 @@ export const featuredWork: FeaturedWork[] = [
         { label: "Email directly", href: "mailto:ngwendu.action@gmail.com" },
       ],
       closingNote:
-        "KOI proves that the practice is not only visual. It also spans robust data systems, production infrastructure, and premium interfaces built as one product surface.",
+        "IOG proves that the practice is not only visual. It also spans robust data systems, production infrastructure, and premium interfaces built as one product surface.",
     },
   },
 ];

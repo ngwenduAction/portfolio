@@ -4,7 +4,7 @@ import { siteUrl } from "@/content/site";
 
 const canonicalRoutes = [
   "/",
-  "/work/koi",
+  "/work/iog",
   "/work/mobikes",
   "/work/signal-field",
   "/work/sera",

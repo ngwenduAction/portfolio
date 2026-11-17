@@ -6,7 +6,7 @@ The site connects commercial product delivery, responsive frontend systems, and 
 
 ## Selected work
 
-- [KOI](https://portfolio-ngwendu.vercel.app/work/koi) presents an active client platform built around Next.js, relational data modelling, and precise responsive interface engineering.
+- [IOG](https://portfolio-ngwendu.vercel.app/work/iog) presents an active client platform built around Next.js, relational data modelling, and precise responsive interface engineering.
 - [moBikes](https://portfolio-ngwendu.vercel.app/work/mobikes) documents sold commercial work focused on trust, offer clarity, and a direct application path.
 - [Signal Field](https://portfolio-ngwendu.vercel.app/work/signal-field) examines GPU-driven animation through Three.js, instancing, GLSL, procedural motion, and bloom.
 - [SÉRA](https://portfolio-ngwendu.vercel.app/work/sera) explores editorial frontend systems, reusable GSAP motion, responsive media, and reduced-motion support.
@@ -27,7 +27,7 @@ The architecture intentionally leaves room for future WebGL-heavy work without m
 
 ```text
 /
-/work/koi
+/work/iog
 /work/mobikes
 /work/signal-field
 /work/sera
