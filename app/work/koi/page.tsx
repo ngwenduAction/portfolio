@@ -17,7 +17,7 @@ export function generateMetadata(): Metadata {
   return createProjectMetadata(project);
 }
 
-export default function KoiPage() {
+export default function IogPage() {
   const project = getFeaturedWorkBySlug("iog");
 
   if (!project) {
