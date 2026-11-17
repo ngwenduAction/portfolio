@@ -477,7 +477,7 @@ export const featuredWork: FeaturedWork[] = [
         href: "/work/koi",
       },
       liveSite: {
-        href: "https://koi-biblestudy.vercel.app/",
+        href: "https://iogsa.vercel.app/",
       },
     },
     caseStudy: {
