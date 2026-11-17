@@ -354,7 +354,7 @@ export const featuredWork: FeaturedWork[] = [
         href: "/work/mobikes",
       },
       liveSite: {
-        href: "https://www.mobikes.co.za/",
+        href: "https://mobikes-preview.netlify.app/",
       },
     },
     caseStudy: {
