@@ -462,7 +462,7 @@ export const featuredWork: FeaturedWork[] = [
     detailIntro:
       "IOG shows the practice at its most infrastructural: a full-stack platform where database architecture, deployment pipelines, and exacting frontend geometry all have to hold together as one system.",
     media: {
-      src: "/work-iog-home.jpg",
+      src: "/work-koi-home.jpg",
       alt: "IOG live platform home screen with an editorial Bible Study Class interface",
       width: 1570,
       height: 980,
@@ -474,7 +474,7 @@ export const featuredWork: FeaturedWork[] = [
     },
     links: {
       caseStudy: {
-        href: "/work/iog",
+        href: "/work/koi",
       },
       liveSite: {
         href: "https://iogsa.vercel.app/",
