@@ -4,11 +4,20 @@ import type { FeaturedWork } from "@/content/featured-work";
 import { siteContent } from "@/content/site";
 
 export function createProjectMetadata(project: FeaturedWork): Metadata {
+  // check if this is the moBikes project to block it from search engines
+  const shouldHideFromGoogle =
+    project.path.includes("mobikes") ||
+    project.social.title.toLowerCase().includes("mobikes");
+
   return {
     title: project.social.title,
     description: project.social.description,
     alternates: {
       canonical: project.path,
+    },
+    robots: {
+      index: !shouldHideFromGoogle,
+      follow: true,
     },
     openGraph: {
       title: project.social.title,
