@@ -72,6 +72,7 @@ export type FeaturedWork = {
   rendering: string;
   status: string;
   detailIntro: string;
+  noindex?: boolean;
   media: WorkMedia;
   social: {
     title: string;
@@ -338,6 +339,7 @@ export const featuredWork: FeaturedWork[] = [
     status: "Delivered commercial website",
     detailIntro:
       "moBikes shows the practice in a client-facing mode: translating a real business model into a shorter, clearer, and more trustworthy responsive surface without losing polish.",
+    noindex: true,
     media: {
       src: "/work-mobikes-home.jpg",
       alt: "moBikes live homepage presenting its rent-to-own mobility offer",
